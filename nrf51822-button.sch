@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="2" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="2" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -9465,8 +9465,8 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 </classes>
 <parts>
 <part name="U1" library="AMLib" deviceset="NRF51822" device="" value="NRF51822-QFAB-R7"/>
-<part name="C12" library="rcl_custom" deviceset="C-EU" device="0402-C-NOSILK" value="12p"/>
-<part name="C13" library="rcl_custom" deviceset="C-EU" device="0402-C-NOSILK" value="12p"/>
+<part name="C12" library="rcl_custom" deviceset="C-EU" device="0402-C-NOSILK" value="12p (NPO +- 2%)"/>
+<part name="C13" library="rcl_custom" deviceset="C-EU" device="0402-C-NOSILK" value="12p (NPO +- 2%)"/>
 <part name="C1" library="rcl_custom" deviceset="C-EU" device="0402-C-NOSILK" value="100n"/>
 <part name="C2" library="rcl_custom" deviceset="C-EU" device="0402-C-NOSILK" value="1n"/>
 <part name="C3" library="rcl_custom" deviceset="C-EU" device="0402-C-NOSILK" value="100n"/>
@@ -9532,12 +9532,12 @@ Programmer</text>
 <attribute name="VALUE" x="92.71" y="138.43" size="1.27" layer="96" ratio="10"/>
 </instance>
 <instance part="C12" gate="CE" x="156.21" y="109.22" smashed="yes" rot="R90">
-<attribute name="NAME" x="155.829" y="110.744" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="160.909" y="110.744" size="1.778" layer="96" rot="R90"/>
+<attribute name="NAME" x="156.464" y="104.521" size="1.778" layer="95"/>
+<attribute name="VALUE" x="153.924" y="112.141" size="1.778" layer="96"/>
 </instance>
 <instance part="C13" gate="CE" x="156.21" y="129.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="160.02" y="130.81" size="1.778" layer="95"/>
-<attribute name="VALUE" x="160.02" y="127" size="1.778" layer="96"/>
+<attribute name="NAME" x="157.48" y="124.46" size="1.778" layer="95"/>
+<attribute name="VALUE" x="153.67" y="132.08" size="1.778" layer="96"/>
 </instance>
 <instance part="C1" gate="CE" x="142.24" y="53.34" smashed="yes">
 <attribute name="NAME" x="143.764" y="53.721" size="1.778" layer="95"/>
