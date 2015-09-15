@@ -8851,8 +8851,8 @@ Used by permission</description>
 <library name="16mm-coincell-keystone">
 <packages>
 <package name="16MM-COINCELL-KEYSTONE">
-<pad name="POS@1" x="-10.9728" y="0" drill="1.2" diameter="3.175" shape="square"/>
-<pad name="POS@2" x="10.9728" y="0" drill="1.2" diameter="3.175" shape="square"/>
+<pad name="POS@1" x="-9.7028" y="0" drill="1.2" diameter="3.175" shape="square"/>
+<pad name="POS@2" x="9.7028" y="0" drill="1.2" diameter="3.175" shape="square"/>
 <circle x="0" y="0" radius="8" width="0.127" layer="21"/>
 <wire x1="-3.2" y1="-8.72" x2="3.2" y2="-8.72" width="0.127" layer="21"/>
 <wire x1="8.435" y1="3.2" x2="8.435" y2="-3.2" width="0.127" layer="21"/>
