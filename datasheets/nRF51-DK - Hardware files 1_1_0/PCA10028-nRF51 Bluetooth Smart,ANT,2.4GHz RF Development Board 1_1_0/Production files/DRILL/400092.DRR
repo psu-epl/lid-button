@@ -1,0 +1,23 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: 400092.PcbDoc   24.10.2014  19:41:57
+---------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : 400092-RoundHoles.TXT
+ASCII SlotHoles File : 400092-SlotHoles.TXT
+EIA File   : 400092.DRL
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        12mil (0.3048mm)         Round          476              64.30 Inch (1633.17 mm)
+T2        13mil (0.3302mm)         Round          16               0.71 Inch (18.00 mm)
+T3        19.7mil (0.50038mm)      Slot           2                283.05 Inch (7189.42 mm)
+T4        35.4mil (0.89916mm)      Round          80               12.88 Inch (327.24 mm)
+T5        39.4mil (1.00076mm)      Round          2                3.32 Inch (84.31 mm)
+T6        70.1mil (1.78054mm)      Round          2                1.10 Inch (27.94 mm)
+T7        126mil (3.2004mm)        Round          6                8.40 Inch (213.47 mm)
+T8        39mil (0.9906mm)         Round          3         NPTH   0.38 Inch (9.72 mm)
+---------------------------------------------------------------------------
+Totals                                            587              374.14 Inch (9503.27 mm)
+
+Total Processing Time (hh:mm:ss) : 00:00:00

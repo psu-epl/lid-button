@@ -1,0 +1,121 @@
+Designator Footprint               Mid X         Mid Y         Ref X         Ref Y         Pad X         Pad Y TB      Rotation Comment        
+
+P17        HDR_2x8               77.47mm       29.21mm       77.47mm       29.21mm       86.36mm       30.48mm  T        180.00 Pin Header 2x8 
+P16        HDR_2x10             30.226mm       29.21mm      30.226mm       29.21mm      41.656mm       30.48mm  T        180.00 Pin Header 2x10
+P15        HDR_2x8               54.61mm       29.21mm       54.61mm       29.21mm        63.5mm       30.48mm  T        180.00 Pin Header 2x8 
+P14        HDR_2x6               57.15mm      -29.21mm       57.15mm      -29.21mm        50.8mm      -30.48mm  T        360.00 Pin Header 2x6 
+P13        HDR_2x8               36.83mm      -29.21mm       36.83mm      -29.21mm       27.94mm      -30.48mm  T        360.00 Pin Header 2x8 
+R5         RESC1005X04L        39.4462mm    -13.0302mm     39.4462mm    -13.0302mm     38.9462mm    -13.0302mm  T        360.00 10k            
+P21        LIST_ANG_1x2-SMD-2.54MM       9.563mm      -13.97mm      11.811mm      -13.97mm      11.811mm       -12.7mm  T        270.00 Pin List 1x2, Angled
+P20        LIST_1x8_SMD         27.686mm       13.97mm      18.796mm       13.97mm      18.796mm      15.435mm  T          0.00 Pin List 1x8   
+P19        FTSH-105-K           3.8862mm     22.8854mm      3.8862mm     22.8854mm      5.8362mm     20.3454mm  T         90.00 FTSH-105       
+SW6        JS202011SCQN         5.5372mm    -24.4602mm      5.5372mm    -24.4602mm      3.0372mm    -27.2102mm  T        360.00 Switch         
+R4         RESC1005X04L         88.011mm       11.43mm      88.011mm       11.43mm      88.011mm       10.93mm  T         90.00 220R           
+R3         RESC1005X04L         81.661mm       11.43mm      81.661mm       11.43mm      81.661mm       10.93mm  T         90.00 220R           
+C15        CAPC1005X04L        94.4626mm      5.6896mm     94.4626mm      5.6896mm     94.4626mm      5.1896mm  T         90.00 1.2pF          
+X2         XTAL_3215            78.131mm      8.4296mm      78.131mm      8.4296mm      79.381mm      8.4296mm  T        180.00 32.768kHz      
+C14        CAPC1005X04L        75.8196mm       8.455mm     75.8196mm       8.455mm     75.8196mm       7.955mm  T         90.00 12pF           
+C13        CAPC1005X04L         80.417mm      8.4296mm      80.417mm      8.4296mm      80.417mm      7.9296mm  T         90.00 12pF           
+SW1        ALPS_SKHUxxx010_WO_GND      76.708mm       -12.7mm      76.708mm       -12.7mm      80.083mm       -10.7mm  T        360.00 PB SW          
+SW2        ALPS_SKHUxxx010_WO_GND      88.138mm       -12.7mm      88.138mm       -12.7mm      91.513mm       -10.7mm  T        360.00 PB SW          
+SW5        ALPS_SKHUxxx010_WO_GND     21.0058mm      -24.13mm     21.0058mm      -24.13mm     24.3808mm      -22.13mm  T        360.00 PB SW          
+P6         SOCKET_1x8_SMD        77.47mm       24.13mm       86.36mm       24.13mm       86.36mm      25.595mm  T        180.00 Socket 1x8     
+P11        SOCKET_2x3_SMD-2.54mm-bottom      64.897mm        1.27mm      64.897mm        1.27mm      62.072mm        3.81mm  T        270.00 Socket 2x3     
+P8         LIST_1x6_SMD          57.15mm      -24.13mm        50.8mm      -24.13mm        50.8mm     -22.665mm  B        360.00 Pin List 1x6   
+P10        LIST_1x10_SMD        30.226mm       24.13mm      41.656mm       24.13mm      41.656mm      25.595mm  B        180.00 Pin List 1x10  
+P9         LIST_1x8_SMD          54.61mm       24.13mm        63.5mm       24.13mm        63.5mm      25.595mm  B        180.00 Pin List 1x8   
+P7         LIST_1x8_SMD          36.83mm      -24.13mm       27.94mm      -24.13mm       27.94mm     -25.595mm  B          0.00 Pin List 1x8   
+P3         SOCKET_1x8_SMD        54.61mm       24.13mm        63.5mm       24.13mm        63.5mm      25.595mm  T        180.00 Socket 1x8     
+P4         SOCKET_1x10_SMD      30.226mm       24.13mm      41.656mm       24.13mm      41.656mm      25.595mm  T        180.00 Socket 1x10    
+P1         SOCKET_1x8_SMD        36.83mm      -24.13mm       27.94mm      -24.13mm       27.94mm     -25.595mm  T        360.00 Socket 1x8     
+P2         SOCKET_1x6_SMD        57.15mm      -24.13mm        50.8mm      -24.13mm        50.8mm     -22.665mm  T        360.00 Socket 1x6     
+P5         Molex_15-91-2060      64.897mm        1.27mm      64.897mm        1.27mm     62.6745mm        3.81mm  T        270.00 Pin Hdr 2x3    
+C12        CAPC1608X06L         77.089mm      3.8354mm      77.089mm      3.8354mm      77.089mm      3.1604mm  T         90.00 1.0µF          
+C10        CAPC1005X04L        87.6046mm       -2.54mm     87.6046mm       -2.54mm     87.6046mm       -2.04mm  T        270.00 47nF           
+L5         INDC1005X04L        76.2254mm      2.4384mm     76.2254mm      2.4384mm     76.2254mm      1.9634mm  T         90.00 15nH           
+L4         INDC1608X06L        77.7494mm       2.032mm     77.7494mm       2.032mm     78.4244mm       2.032mm  T        180.00 10µH           
+C1         CAPC1005X04L        86.2838mm      8.3058mm     86.2838mm      8.3058mm     85.9303mm      8.6594mm  T        315.00 12pF           
+X1         BT-XTAL_2520        84.9376mm      6.9596mm     84.9376mm      6.9596mm     85.0437mm      8.0556mm  T        225.00 16MHz          
+U1         QFN40P600X600X90-48N      82.931mm           0mm      82.931mm           0mm      79.906mm         2.2mm  T        360.00 nRF51422-QFAC  
+C11        CAPC1005X04L        78.5622mm     -2.8448mm     78.5622mm     -2.8448mm     78.5622mm     -2.3448mm  T        270.00 100nF          
+C8         CAPC1005X04L        83.6676mm       4.572mm     83.6676mm       4.572mm     84.0211mm      4.2185mm  T        135.00 100nF          
+C7         CAPC1608X06L        78.8924mm      3.8354mm     78.8924mm      3.8354mm     78.8924mm      3.1604mm  T         90.00 4.7µF          
+C9         CAPC1005X04L        86.2076mm      4.3688mm     86.2076mm      4.3688mm     86.2076mm      3.8688mm  T         90.00 1.0nF          
+C2         CAPC1005X04L        83.6168mm      5.6388mm     83.6168mm      5.6388mm     83.9703mm      5.2853mm  T        135.00 12pF           
+L3         INDC1005X04L        87.4776mm      4.0132mm     87.4776mm      4.0132mm     87.4776mm      3.5382mm  T         90.00 3.3nH          
+L2         INDC1005X04L        88.1888mm     -0.7366mm     88.1888mm     -0.7366mm     88.1888mm     -1.2116mm  T         90.00 27nH           
+L1         INDC1005X04L        87.4776mm      0.4064mm     87.4776mm      0.4064mm     87.4776mm     -0.0686mm  T         90.00 4.7nH          
+C6         CAPC1005X04L        87.4776mm      5.8166mm     87.4776mm      5.8166mm     87.4776mm      5.3166mm  T         90.00 1.5pF          
+C5         CAPC1005X04L        87.4776mm      2.2098mm     87.4776mm      2.2098mm     87.4776mm      1.7098mm  T         90.00 3.9pF          
+C3         CAPC1005X04L        88.4428mm       -2.54mm     88.4428mm       -2.54mm     88.4428mm       -2.04mm  T        270.00 2.2nF          
+C4         CAPC1005X04L         88.773mm      2.7686mm      88.773mm      2.7686mm      88.273mm      2.7686mm  T        360.00 1.0pF          
+Bat1       CR2032_HOLDER_SMD     11.4276mm           0mm     11.4276mm      13.081mm     11.4276mm       12.35mm  B        270.00 Bat Holder CR2032
+R6         RESC1005X04L        16.5608mm     13.5128mm     16.5608mm     13.5128mm     16.5608mm     13.0128mm  T         90.00 N.C.           
+R18        RESC1005X04L        42.6366mm      -1.778mm     42.6366mm      -1.778mm     43.1366mm      -1.778mm  T        180.00 1k             
+C18        CAPC1005X04L         9.6266mm     -8.8392mm      9.6266mm     -8.8392mm      9.1266mm     -8.8392mm  T        360.00 100nF          
+C17        CAPC1608X06L         9.3726mm     -7.7724mm      9.3726mm     -7.7724mm      8.6976mm     -7.7724mm  T        360.00 1.0µF          
+C19        CAPC1005X04L          2.286mm     -6.9596mm       2.286mm     -6.9596mm       2.786mm     -6.9596mm  T        180.00 100nF          
+C36        CAPC1005X04L        27.6252mm      5.2832mm     27.6252mm      5.2832mm     27.1252mm      5.2832mm  T        360.00 100nF          
+C23        CAPC1005X04L        27.6506mm      7.4676mm     27.6506mm      7.4676mm     27.6506mm      7.9676mm  T        270.00 18pF           
+C33        CAPC1608X06L        37.6582mm      6.9342mm     37.6582mm      6.9342mm     36.9832mm      6.9342mm  T        360.00 10µF           
+C22        CAPC1005X04L        23.0278mm      7.5438mm     23.0278mm      7.5438mm     23.0278mm      7.0438mm  T         90.00 18pF           
+C32        CAPC1005X04L        37.9376mm      5.9182mm     37.9376mm      5.9182mm     37.4376mm      5.9182mm  T        360.00 100nF          
+C31        CAPC1608X06L         40.767mm      5.8674mm      40.767mm      5.8674mm      41.442mm      5.8674mm  T        180.00 10µF           
+C38        CAPC1005X04L         23.104mm     -0.1016mm      23.104mm     -0.1016mm      23.104mm     -0.6016mm  T         90.00 100nF          
+C37        CAPC1005X04L        20.8942mm     -0.1016mm     20.8942mm     -0.1016mm     20.8942mm     -0.6016mm  T         90.00 10pF           
+C30        CAPC1005X04L        41.4936mm      1.9558mm     41.4936mm      1.9558mm     41.4936mm      2.4558mm  T        270.00 10nF           
+C24        CAPC1005X04L        26.8124mm    -12.8524mm     26.8124mm    -12.8524mm     27.3124mm    -12.8524mm  T        180.00 100nF          
+C26        CAPC1005X04L        37.0232mm     -13.335mm     37.0232mm     -13.335mm     37.0232mm     -13.835mm  T         90.00 100nF          
+C28        CAPC1005X04L         42.535mm     -4.4704mm      42.535mm     -4.4704mm      43.035mm     -4.4704mm  T        180.00 100nF          
+C29        CAPC1005X04L        41.8746mm     -0.0762mm     41.8746mm     -0.0762mm     41.8746mm      0.4238mm  T        270.00 100nF          
+C35        CAPC1005X04L          33.01mm       5.715mm       33.01mm       5.715mm       32.51mm       5.715mm  T        360.00 100nF          
+C41        CAPC1005X04L        22.6468mm     -5.2832mm     22.6468mm     -5.2832mm     23.1468mm     -5.2832mm  T        180.00 100nF          
+C25        CAPC1005X04L        30.3176mm     -13.335mm     30.3176mm     -13.335mm     30.3176mm     -13.835mm  T         90.00 100nF          
+C27        CAPC1005X04L        41.9508mm     -5.9436mm     41.9508mm     -5.9436mm     41.9508mm     -5.4436mm  T        270.00 100nF          
+C34        CAPC1005X04L        34.4324mm      6.3754mm     34.4324mm      6.3754mm     34.4324mm      6.8754mm  T        270.00 100nF          
+C39        CAPC1005X04L         23.104mm     -1.9304mm      23.104mm     -1.9304mm      23.104mm     -2.4304mm  T         90.00 100nF          
+C40        CAPC1005X04L        22.5706mm     -3.2512mm     22.5706mm     -3.2512mm     22.0706mm     -3.2512mm  T        360.00 100nF          
+R24        RESC1005X04L        41.4936mm      3.9116mm     41.4936mm      3.9116mm     41.4936mm      4.4116mm  T        270.00 4k7            
+R12        RESC1005X04L          2.286mm     -6.0452mm       2.286mm     -6.0452mm       2.786mm     -6.0452mm  T        180.00 10k            
+R17        RESC1005X04L        21.7832mm     -0.1016mm     21.7832mm     -0.1016mm     21.7832mm     -0.6016mm  T         90.00 6k8            
+R15        RESC1005X04L        34.3054mm     -13.335mm     34.3054mm     -13.335mm     34.3054mm     -12.835mm  T        270.00 150R           
+R16        RESC1005X04L         32.502mm     -13.335mm      32.502mm     -13.335mm      32.502mm     -12.835mm  T        270.00 150R           
+U2         TSQFP50P1600X1600X160-100N     32.3242mm       -3.81mm     32.3242mm       -3.81mm     26.3242mm     -11.385mm  T         90.00 ATSAM3U2CA-AU  
+X3         BT-XTAL_3225        25.3392mm      7.5184mm     25.3392mm      7.5184mm     26.5332mm      8.4089mm  T        180.00 12MHz          
+C16        CAPC1608X06L         8.8138mm      -5.461mm      8.8138mm      -5.461mm      8.8138mm      -6.136mm  T         90.00 1.0µF          
+D1         SOT-363             12.1032mm    -17.2824mm     12.9032mm    -17.9324mm     12.9032mm    -17.9324mm  T         90.00 SD103ATW-7-F   
+R14        RESC1005X04L        18.9488mm      5.7389mm     18.9488mm      5.7389mm     18.9488mm      6.2389mm  T        270.00 39R            
+R13        RESC1005X04L        18.9488mm      3.8709mm     18.9488mm       3.871mm     18.9488mm       3.371mm  T         90.00 39R            
+D2         SOT190P230X110-4L      8.1942mm      0.3302mm      8.1942mm      0.3302mm      8.9442mm      1.3552mm  T        270.00 PRTR5V0U2X     
+C21        CAPC1005X04L         9.6928mm     -1.7526mm      9.6928mm     -1.7526mm     10.1928mm     -1.7526mm  T        180.00 100nF          
+C20        CAPC1608X06L         9.9722mm     -2.7686mm      9.9722mm     -2.7686mm     10.6472mm     -2.7686mm  T        180.00 10µF           
+J2         FCI_10118193-0001LF      2.7733mm           0mm      4.1108mm           0mm      4.1108mm         1.3mm  T        360.00 MicroUSB-B     
+LD5        LED_DUAL_0606       21.6308mm     -8.9154mm     21.6308mm     -8.9154mm     21.2058mm     -9.6404mm  T        180.00 LTST-C195KGJRKT
+R19        RESC1005X04L        22.1066mm    -11.9634mm     22.1066mm    -11.9634mm     22.1066mm    -11.4634mm  T        270.00 220R           
+R20        RESC1005X04L         21.155mm    -11.9634mm      21.155mm    -11.9634mm      21.155mm    -11.4634mm  T        270.00 220R           
+J1         COAXIAL-SWF         92.5068mm      4.8768mm     92.5068mm      4.8768mm     91.3468mm      4.8768mm  T         90.00 MM8130-2600    
+SW4        ALPS_SKHUxxx010_WO_GND      88.138mm      -24.13mm      88.138mm      -24.13mm      91.513mm      -22.13mm  T        360.00 PB SW          
+R22        RESC1005X04L         41.275mm     10.7188mm      41.275mm     10.7188mm      40.775mm     10.7188mm  T        360.00 4k7            
+SW3        ALPS_SKHUxxx010_WO_GND      76.708mm      -24.13mm      76.708mm      -24.13mm      80.083mm      -22.13mm  T        360.00 PB SW          
+R2         RESC1005X04L         88.011mm       15.24mm      88.011mm       15.24mm      88.011mm       14.74mm  T         90.00 220R           
+R1         RESC1005X04L         81.661mm       15.24mm      81.661mm       15.24mm      81.661mm       14.74mm  T         90.00 220R           
+LED 2      LED_0805_G          85.6074mm       15.24mm     84.6074mm       15.24mm     84.6074mm       15.24mm  T        360.00 L0805G         
+LED 1      LED_0805_G          79.2574mm       15.24mm     78.2574mm       15.24mm     78.2574mm       15.24mm  T        360.00 L0805G         
+R23        RESC1005X04L         41.275mm     11.7856mm      41.275mm     11.7856mm      40.775mm     11.7856mm  T        360.00 4k7            
+R21        RESC1005X04L         41.275mm       9.652mm      41.275mm       9.652mm      40.775mm       9.652mm  T        360.00 4k7            
+Fid2       Fiducial              11.43mm     -27.305mm       11.43mm     -27.305mm       11.43mm     -27.305mm  T          0.00 Fiducial mark  
+Fid1       Fiducial              96.52mm       24.13mm       96.52mm       24.13mm       96.52mm       24.13mm  T        180.00 Fiducial mark  
+LED 3      LED_0805_G          79.2574mm       11.43mm     78.2574mm       11.43mm     78.2574mm       11.43mm  T        360.00 L0805G         
+LED 4      LED_0805_G          85.6074mm       11.43mm     84.6074mm       11.43mm     84.6074mm       11.43mm  T        360.00 L0805G         
+P12        LIST_1x8_SMD          77.47mm       24.13mm       86.36mm       24.13mm       86.36mm      25.595mm  B        180.00 Pin List 1x8   
+U3         SOT-23A               11.21mm     -5.6998mm       10.16mm     -4.7498mm       10.16mm     -4.7498mm  T        270.00 AP7333-33SAG-7 
+P18        FTSH-105-K           64.897mm     -10.033mm      64.897mm     -10.033mm      67.437mm      -8.083mm  T        180.00 FTSH-105       
+R10        RESC1005X04L         41.275mm     12.7254mm      41.275mm     12.7254mm      41.775mm     12.7254mm  T        180.00 10k            
+R11        RESC1005X04L        11.0744mm     17.6784mm     11.0744mm     17.6784mm     11.0744mm     17.1784mm  T         90.00 10k            
+R8         RESC1005X04L         9.4488mm     20.5232mm      9.4488mm     20.5232mm      9.4488mm     21.0232mm  T        270.00 10k            
+Q1         SOT65P210X100-6N     11.3538mm     20.5232mm     11.3538mm     20.5232mm     12.3038mm     19.8732mm  T        180.00 FDG6321C       
+Q2         SOT65P210X100-6N     42.3926mm     15.2146mm     42.3926mm     15.2146mm     43.3426mm     14.5646mm  T        180.00 FDG6321C       
+R7         RESC1005X04L        13.3604mm     20.0406mm     13.3604mm     20.0406mm     13.3604mm     20.5406mm  T        270.00 4k7            
+R9         RESC1005X04L        40.1828mm     15.5702mm     40.1828mm     15.5702mm     40.1828mm     16.0702mm  T        270.00 10k            
+P22        LIST_ANG_1x2-SMD-2.54MM       9.563mm       13.97mm      11.811mm       13.97mm      11.811mm       15.24mm  T        270.00 Pin List 1x2, Angled
+
