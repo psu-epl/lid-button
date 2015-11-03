@@ -31,3 +31,4 @@
 .\_build\main.o: C:\Users\bctowell\Desktop\Capstone Programming\peripheral\blinky\pca10028\blank\arm5\RTE\nRF_Libraries\nRF51422_xxAC\app_error.h
 .\_build\main.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\3.0.1\util\app_util.h
 .\_build\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\_build\main.o: C:\Keil_v5\ARM\Pack\NordicSemiconductor\RTT\SEGGER_RTT.h

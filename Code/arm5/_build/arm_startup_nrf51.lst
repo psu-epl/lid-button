@@ -192,7 +192,7 @@ ARM Macro Assembler    Page 3
   133 00000000 2103            MOVS             R1, #NRF_POWER_RAMONx_RAMxON_ON
 MODE_Msk
   134 00000002         
-  135 00000002 4809            LDR              R0, =NRF_POWER_RAMON_ADDRESS
+  135 00000002 480C            LDR              R0, =NRF_POWER_RAMON_ADDRESS
 
 
 
@@ -203,14 +203,14 @@ ARM Macro Assembler    Page 4
   137 00000006 430A            ORRS             R2, R2, R1
   138 00000008 6002            STR              R2, [R0]
   139 0000000A         
-  140 0000000A 4808            LDR              R0, =NRF_POWER_RAMONB_ADDRESS
+  140 0000000A 480B            LDR              R0, =NRF_POWER_RAMONB_ADDRESS
   141 0000000C 6802            LDR              R2, [R0]
   142 0000000E 430A            ORRS             R2, R2, R1
   143 00000010 6002            STR              R2, [R0]
   144 00000012         
-  145 00000012 4807            LDR              R0, =SystemInit
+  145 00000012 480A            LDR              R0, =SystemInit
   146 00000014 4780            BLX              R0
-  147 00000016 4807            LDR              R0, =__main
+  147 00000016 480A            LDR              R0, =__main
   148 00000018 4700            BX               R0
   149 0000001A                 ENDP
   150 0000001A         
@@ -314,48 +314,56 @@ ARM Macro Assembler    Page 5
   231 00000028         ; User Initial Stack & Heap
   232 00000028         
   233 00000028                 IF               :DEF:__MICROLIB
-  234 00000028         
-  235 00000028                 EXPORT           __initial_sp
-  236 00000028                 EXPORT           __heap_base
-  237 00000028                 EXPORT           __heap_limit
-  238 00000028         
-  239 00000028                 ELSE
-  253                          ENDIF
-  254 00000028         
-  255 00000028                 END
+  240 00000028         
+  241 00000028                 IMPORT           __use_two_region_memory
+  242 00000028                 EXPORT           __user_initial_stackheap
+  243 00000028         __user_initial_stackheap
+  244 00000028         
+  245 00000028 4806            LDR              R0, = Heap_Mem
+  246 0000002A 4907            LDR              R1, = (Stack_Mem + Stack_Size)
+  247 0000002C 4A07            LDR              R2, = (Heap_Mem + Heap_Size)
+  248 0000002E 4B08            LDR              R3, = Stack_Mem
 
 
 
 ARM Macro Assembler    Page 6 
 
 
+  249 00000030 4770            BX               LR
+  250 00000032         
+  251 00000032 00 00           ALIGN
+  252 00000034         
+  253 00000034                 ENDIF
+  254 00000034         
+  255 00000034                 END
               40000524 
               40000554 
               00000000 
               00000000 
+              00000000 
+              00000800 
+              00000800 
+              00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0 --apcs=interw
-ork --depend=.\_build\arm_startup_nrf51.d -o.\_build\arm_startup_nrf51.o -I"C:\
-Users\bctowell\Desktop\Capstone Programming\peripheral\blinky\pca10028\blank\ar
-m5\RTE" -I"C:\Users\bctowell\Desktop\Capstone Programming\peripheral\blinky\pca
-10028\blank\arm5\RTE\nRF_Drivers\nRF51422_xxAC" -I"C:\Users\bctowell\Desktop\Ca
-pstone Programming\peripheral\blinky\pca10028\blank\arm5\RTE\nRF_Libraries\nRF5
-1422_xxAC" -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include -IC:\Keil_v5\ARM
-\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include -IC:\Keil_v
-5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\common -IC:\Keil_v5\ARM\PACK\N
-ordicSemiconductor\nRF_Drivers\3.0.1\config -IC:\Keil_v5\ARM\PACK\NordicSemicon
-ductor\nRF_Drivers\3.0.1\gpiote -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_D
-rivers\3.0.1\hal -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\nr
-f_soc_nosd -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\ppi -IC:
-\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\timer -IC:\Keil_v5\ARM\
-PACK\NordicSemiconductor\nRF_Drivers\3.0.1\uart -IC:\Keil_v5\ARM\PACK\NordicSem
-iconductor\nRF_Examples\9.0.0\bsp -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF
-_Libraries\3.0.1\pwm -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\3.
-0.1\timer -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\3.0.1\util --
-predefine="__EVAL SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISIO
-N_VERSION SETA 515" --predefine="_RTE_ SETA 1" --predefine="NRF51 SETA 1" --pre
-define="BSP_DEFINES_ONLY SETA 1" --predefine="BOARD_PCA10028 SETA 1" --predefin
-e="NRF51 SETA 1" --list=.\_build\arm_startup_nrf51.lst RTE\Device\nRF51422_xxAC
-\arm_startup_nrf51.s
+ork --depend=.\_build\arm_startup_nrf51.d -o.\_build\arm_startup_nrf51.o -I\\ps
+f\Home\Downloads\arm5-2\RTE -I\\psf\Home\Downloads\arm5-2\RTE\nRF_Drivers\nRF51
+422_xxAC -I\\psf\Home\Downloads\arm5-2\RTE\nRF_Libraries\nRF51422_xxAC -IC:\Kei
+l_v5\ARM\PACK\ARM\CMSIS\4.4.0\CMSIS\Include -IC:\Keil_v5\ARM\PACK\NordicSemicon
+ductor\nRF_DeviceFamilyPack\8.0.3\Device\Include -IC:\Keil_v5\ARM\PACK\NordicSe
+miconductor\nRF_Drivers\3.0.1\common -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\
+nRF_Drivers\3.0.1\config -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\
+3.0.1\gpiote -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\hal -I
+C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\nrf_soc_nosd -IC:\Kei
+l_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\ppi -IC:\Keil_v5\ARM\PACK\N
+ordicSemiconductor\nRF_Drivers\3.0.1\timer -IC:\Keil_v5\ARM\PACK\NordicSemicond
+uctor\nRF_Drivers\3.0.1\uart -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Exam
+ples\9.0.0\bsp -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\3.0.1\pw
+m -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\3.0.1\timer -IC:\Keil
+_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\3.0.1\util --predefine="__EVAL S
+ETA 1" --predefine="__UVISION_VERSION SETA 516" --predefine="_RTE_ SETA 1" --pr
+edefine="NRF51 SETA 1" --predefine="BSP_DEFINES_ONLY SETA 1" --predefine="BOARD
+_PCA10028 SETA 1" --predefine="NRF51 SETA 1" --list=.\_build\arm_startup_nrf51.
+lst RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
 
 
 
@@ -376,8 +384,9 @@ Symbol: Stack_Mem
    Definitions
       At line 41 in file RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
    Uses
-      None
-Comment: Stack_Mem unused
+      At line 246 in file RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
+      At line 248 in file RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
+
 __initial_sp 00000800
 
 Symbol: __initial_sp
@@ -385,8 +394,7 @@ Symbol: __initial_sp
       At line 42 in file RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
    Uses
       At line 65 in file RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
-      At line 235 in file RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
-
+Comment: __initial_sp used once
 3 symbols
 
 
@@ -408,24 +416,25 @@ Symbol: Heap_Mem
    Definitions
       At line 52 in file RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
    Uses
-      None
-Comment: Heap_Mem unused
+      At line 245 in file RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
+      At line 247 in file RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
+
 __heap_base 00000000
 
 Symbol: __heap_base
    Definitions
       At line 51 in file RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
    Uses
-      At line 236 in file RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
-Comment: __heap_base used once
+      None
+Comment: __heap_base unused
 __heap_limit 00000800
 
 Symbol: __heap_limit
    Definitions
       At line 53 in file RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
    Uses
-      At line 237 in file RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
-Comment: __heap_limit used once
+      None
+Comment: __heap_limit unused
 4 symbols
 
 
@@ -791,7 +800,15 @@ Symbol: WDT_IRQHandler
 ARM Macro Assembler    Page 6 Alphabetic symbol ordering
 Relocatable symbols
 
-33 symbols
+__user_initial_stackheap 00000028
+
+Symbol: __user_initial_stackheap
+   Definitions
+      At line 243 in file RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
+   Uses
+      At line 242 in file RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
+Comment: __user_initial_stackheap used once
+34 symbols
 
 
 
@@ -805,7 +822,8 @@ Symbol: Heap_Size
       At line 47 in file RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
    Uses
       At line 52 in file RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
-Comment: Heap_Size used once
+      At line 247 in file RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
+
 NRF_POWER_RAMONB_ADDRESS 40000554
 
 Symbol: NRF_POWER_RAMONB_ADDRESS
@@ -837,7 +855,8 @@ Symbol: Stack_Size
       At line 37 in file RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
    Uses
       At line 41 in file RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
-Comment: Stack_Size used once
+      At line 246 in file RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
+
 __Vectors_Size 000000C0
 
 Symbol: __Vectors_Size
@@ -869,5 +888,13 @@ Symbol: __main
    Uses
       At line 147 in file RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
 Comment: __main used once
-2 symbols
-394 symbols in table
+__use_two_region_memory 00000000
+
+Symbol: __use_two_region_memory
+   Definitions
+      At line 241 in file RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
+   Uses
+      None
+Comment: __use_two_region_memory unused
+3 symbols
+397 symbols in table

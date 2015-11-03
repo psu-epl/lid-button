@@ -3,8 +3,9 @@
 .\_build\nrf_soc.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\nrf_soc_nosd\nrf_soc.h
 .\_build\nrf_soc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\_build\nrf_soc.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include\nrf51.h
-.\_build\nrf_soc.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cm0.h
-.\_build\nrf_soc.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmInstr.h
-.\_build\nrf_soc.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmFunc.h
+.\_build\nrf_soc.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.4.0\CMSIS\Include\core_cm0.h
+.\_build\nrf_soc.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.4.0\CMSIS\Include\core_cmInstr.h
+.\_build\nrf_soc.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.4.0\CMSIS\Include\cmsis_armcc.h
+.\_build\nrf_soc.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.4.0\CMSIS\Include\core_cmFunc.h
 .\_build\nrf_soc.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include\system_nrf51.h
 .\_build\nrf_soc.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\nrf_soc_nosd\nrf_error.h

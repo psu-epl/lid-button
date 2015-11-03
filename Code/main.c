@@ -8,6 +8,7 @@
 #include "app_pwm.h"
 #include "app_timer.h"
 #include <stdlib.h>
+#include "SEGGER_RTT.h"
 
 #define LED_B          1
 #define LED_R          2
@@ -18,11 +19,12 @@ static volatile bool ready_flag;
 int B = 0;
 int R = 0;
 int G = 0;
-int pos = 0;
+int pos = 1;
+int clients = 1;
+int sync = 1;
 uint8_t rssi;
 uint8_t packet_data[PACKET_LENGTH];
 APP_PWM_INSTANCE(PWM_B,0);
-APP_PWM_INSTANCE(PWM_R,1);
 APP_PWM_INSTANCE(PWM_G,2);
 
 void pwm_ready_callback(uint32_t pwm_id)    
@@ -30,25 +32,53 @@ void pwm_ready_callback(uint32_t pwm_id)
   ready_flag = true;
 }
 
-void led_init()
+void timer_init()
 {
-	app_pwm_config_t pwm_cfg_B = APP_PWM_DEFAULT_CONFIG_1CH(500, LED_B);
-	app_pwm_config_t pwm_cfg_R = APP_PWM_DEFAULT_CONFIG_1CH(500, LED_R);
-	app_pwm_config_t pwm_cfg_G = APP_PWM_DEFAULT_CONFIG_1CH(500, LED_G);
-	app_pwm_init(&PWM_B, &pwm_cfg_B,pwm_ready_callback);
-	app_pwm_init(&PWM_R, &pwm_cfg_R,pwm_ready_callback);
-	app_pwm_init(&PWM_G, &pwm_cfg_G,pwm_ready_callback);
-	nrf_gpio_range_cfg_output(1,3);
-	app_pwm_enable(&PWM_B);
-	app_pwm_enable(&PWM_R);
-	app_pwm_enable(&PWM_G);
+	NRF_TIMER1->MODE = TIMER_MODE_MODE_Timer;
+	NRF_TIMER1->TASKS_CLEAR = 1;
+	NRF_TIMER1->PRESCALER = 9;
+	NRF_TIMER1->BITMODE = TIMER_BITMODE_BITMODE_16Bit;
+	NRF_TIMER1->CC[1] = 15000; //31000 is ~ 1 sec
+	NRF_TIMER2->INTENSET = (TIMER_INTENSET_COMPARE1_Enabled << TIMER_INTENSET_COMPARE1_Pos);
+	NVIC_EnableIRQ(TIMER1_IRQn);
+	NRF_TIMER1->TASKS_START = 1;
+	SEGGER_RTT_printf(0, "Syncing to existing network\n");
 }
 
 void color(int blu,int red, int grn)
 {
-	app_pwm_channel_duty_set(&PWM_B, 0, blu);
-	app_pwm_channel_duty_set(&PWM_R, 0, red);
-	app_pwm_channel_duty_set(&PWM_G, 0, grn);
+	int clr = 0;
+	int tblu, tred, tgrn;
+	while(clr == 0)
+	{
+		app_pwm_channel_duty_set(&PWM_B, 0, blu);
+		app_pwm_channel_duty_set(&PWM_G, 0, grn);
+		app_pwm_channel_duty_set(&PWM_B, 1, red);
+		tblu = app_pwm_channel_duty_get(&PWM_B,0);
+		tred = app_pwm_channel_duty_get(&PWM_B,1);
+		tgrn = app_pwm_channel_duty_get(&PWM_G,0);
+		if(tblu == blu && tred == red && tgrn == grn)
+			clr = 1;
+	}
+	SEGGER_RTT_printf(0, "Color is set to Blue:%d Red:%d Green:%d\n",blu,red,grn);
+}
+
+void led_init()
+{
+	app_pwm_config_t pwm_cfg_B = APP_PWM_DEFAULT_CONFIG_2CH(5000, LED_B, LED_R);
+	app_pwm_config_t pwm_cfg_G = APP_PWM_DEFAULT_CONFIG_1CH(5000, LED_G);
+	app_pwm_init(&PWM_B, &pwm_cfg_B,pwm_ready_callback);
+	app_pwm_init(&PWM_G, &pwm_cfg_G,pwm_ready_callback);
+	nrf_gpio_range_cfg_output(1,3);
+	app_pwm_enable(&PWM_B);
+	app_pwm_enable(&PWM_G);
+	color(100,0,0);
+	nrf_delay_ms(150);
+	color(0,0,100);
+	nrf_delay_ms(150);
+	color(0,100,0);
+	nrf_delay_ms(150);
+	color(0,0,0);
 }
 
 void blink(int blu,int red, int grn, int cnt, int spd)
@@ -61,21 +91,21 @@ void blink(int blu,int red, int grn, int cnt, int spd)
 		nrf_delay_ms(spd);
 		cnt--;
 	}
-		
 }
 
 void mesh(int tblu, int tred, int tgrn, int tsig)
 {
-	int rblu = app_pwm_channel_duty_get(&PWM_B,0);
-	int rred = app_pwm_channel_duty_get(&PWM_R,0);
-	int rgrn = app_pwm_channel_duty_get(&PWM_G,0);
-	int rsig = 127 - tsig;
 	
-	color((rblu*rsig)/100+(tblu*tsig)/100,(rred*rsig)/100+(tred*tsig)/100,(rgrn*rsig)/100+(tgrn*tsig)/100);	
+	
+	// Do all math in HSV and convert back to RGB/PWM
+	int rblu = app_pwm_channel_duty_get(&PWM_B,0);
+	int rred = app_pwm_channel_duty_get(&PWM_B,1);
+	int rgrn = app_pwm_channel_duty_get(&PWM_G,0);	
+	//if(abs(tsig) < 55)
+	color((rblu+tblu)/2,(rred+tred)/2,(rgrn+tgrn)/2);	
 }
 void clock_setup(void)
 {
-	color(0,0,100);
   // start 16Mhz external oscillator
   // required for radio peripheral
   NRF_CLOCK->EVENTS_HFCLKSTARTED = 0;
@@ -83,15 +113,6 @@ void clock_setup(void)
 
   // wait for 16Mhz oscillator to start up
   while( NRF_CLOCK->EVENTS_HFCLKSTARTED == 0 );
-  // start 32Khz clock
-  // optional
-  NRF_CLOCK->LFCLKSRC = CLOCK_LFCLKSRC_SRC_Xtal;
-  NRF_CLOCK->EVENTS_LFCLKSTARTED = 0;
-  NRF_CLOCK->TASKS_LFCLKSTART = 1;
-
-  // wait for oscillator to start up
-  while( NRF_CLOCK->EVENTS_LFCLKSTARTED == 0 );
-	blink(0,0,100,2,100);
 }
 
 void radio_setup(uint8_t channel)
@@ -142,14 +163,14 @@ void radio_setup(uint8_t channel)
   NRF_RADIO->CRCINIT      = 0xffff;
 
   NRF_RADIO->FREQUENCY    = channel; // 2400 Mhz + channel in 1Mhz steps
-	blink(100,0,0,2,100);
+	SEGGER_RTT_printf(0, "240%d Mhz\n", channel);
 }
 
 void radio_transmit( uint8_t * packet_buffer )
 {
   //Get current LED data
 	B = app_pwm_channel_duty_get(&PWM_B,0);
-	R = app_pwm_channel_duty_get(&PWM_R,0);
+	R = app_pwm_channel_duty_get(&PWM_B,1);
 	G = app_pwm_channel_duty_get(&PWM_G,0);
 	// For this example the function will block until the packet has completed transmitting
   // Make sure radio is in disabled state
@@ -179,7 +200,7 @@ void radio_transmit( uint8_t * packet_buffer )
   NRF_RADIO->TASKS_DISABLE = 1;
   while( NRF_RADIO->EVENTS_DISABLED == 0 );
 	//Return to previous color
-	color(B,R,G);
+	//color(B,R,G);
 }
 
 bool radio_receive( uint8_t * packet_buffer )
@@ -222,7 +243,9 @@ bool radio_receive( uint8_t * packet_buffer )
   // Since the packet received could be good or bad we need to check the crc
   if( NRF_RADIO->CRCSTATUS != 0 )
   {
-    // packet data is valid
+    if(packet_data[3] > clients)
+			clients = packet_data[3];
+		SEGGER_RTT_printf(0, "%d clients found on network\n",clients);
     return true;
   }
   else
@@ -232,55 +255,130 @@ bool radio_receive( uint8_t * packet_buffer )
   }
 }
 
-void sync(int cycle) //Needs work
-{
-	time_t begin, end;
-	double time_spent;
-	pos = 1;
-		while(cycle > 0)
-		{
-			begin = clock();
-			while(true)
-			{
-						//if(radio_receive(packet_data))
-							//pos++;
-						end = clock();
-						//printf("End time is : %s", ctime(&end));
-						time_spent = ((double) (end - begin )) / CLOCKS_PER_SEC;
-						color(5,5,5);
-						//printf("Time Spent is : %G",time_spent);
-						if(time_spent > 1) //Time never updates pass one
-							break;
-			}
-		}
-			blink(20,0,100,pos,50);
-} 
 
+void TIMER1_IRQHandler(int sec)
+{
+	if(sec > 0)
+	{
+		//SEGGER_RTT_printf(0, "%d\n",sec);
+		NRF_TIMER1->TASKS_CLEAR = 1;
+		NRF_TIMER1->TASKS_START = 1;
+	}
+	else
+	{
+		NRF_TIMER1->TASKS_CLEAR = 1;
+		sync = 0;
+	}
+}
+
+void net_sync (uint8_t * packet_buffer, int sec)
+{
+	// Make sure radio is in disabled state
+  NRF_RADIO->EVENTS_DISABLED = 0;
+  NRF_RADIO->TASKS_DISABLE = 1;
+  while( NRF_RADIO->EVENTS_DISABLED == 0 );
+	
+	// set pointer to packet data written to using radio peripherals DMA
+	NRF_RADIO->PACKETPTR = (uint32_t)packet_buffer;
+	NRF_RADIO->SHORTS |= RADIO_SHORTS_ADDRESS_RSSISTART_Msk;
+	
+	// turn on receiver
+  NRF_RADIO->EVENTS_READY = 0;
+  NRF_RADIO->TASKS_RXEN = 1;
+  while( NRF_RADIO->EVENTS_READY == 0 ); // wait for radio to startup ~132us
+	
+	while (sync == 1)
+	{
+		NRF_TIMER1->TASKS_CAPTURE[0] = 1;
+		//SEGGER_RTT_printf(0, "Timer[0]: %d Timer[1]: %d\n",NRF_TIMER1->CC[0],NRF_TIMER1->CC[1]);
+		// start listening for packet
+		NRF_RADIO->EVENTS_END = 0;
+		NRF_RADIO->EVENTS_RSSIEND = 0;
+		NRF_RADIO->TASKS_RSSISTART = 1;
+		NRF_RADIO->TASKS_START = 1;
+		while( NRF_RADIO->EVENTS_END == 0 );
+		
+		if( NRF_RADIO->CRCSTATUS != 0 )
+		{
+    //SEGGER_RTT_printf(0, "Target Position: %d\n",packet_data[3]);
+		if(packet_data[3]>= pos){
+			pos++;
+			clients = pos;
+		}
+		//SEGGER_RTT_printf(0, "My position is %d\n",pos);
+		SEGGER_RTT_printf(0, "%d clients found on network\n",clients);
+		}
+		if(NRF_TIMER1->CC[0] > NRF_TIMER1->CC[1])
+		{
+			TIMER1_IRQHandler(sec);
+			--sec;
+		}
+
+	}
+	// disable radio
+	NRF_RADIO->EVENTS_RSSIEND = 0;
+  NRF_RADIO->EVENTS_DISABLED = 0;
+  NRF_RADIO->TASKS_DISABLE = 1;
+  while( NRF_RADIO->EVENTS_DISABLED == 0 );
+}
 
 int main(void)
 {
+	int fail = 0;
+	SEGGER_RTT_printf(0, "Starting LED\n");
 	led_init();
-	color(100,0,0);
-	nrf_delay_ms(200);
-	color(0,100,0);
-	nrf_delay_ms(200);
-	color(0,0,100);
-	nrf_delay_ms(200);
-	color(0,0,0);
+	SEGGER_RTT_printf(0, "Done!\n");
+	SEGGER_RTT_printf(0, "Booting up at ");
 	clock_setup();
 	radio_setup(1);
-	color(100,0,0);
-	nrf_delay_ms(500);
-	//sync(10); //Broken, need local time fixed
-	while(1)
+	SEGGER_RTT_printf(0, "Done!\n");
+	SEGGER_RTT_printf(0, "Starting Timers\n");
+	timer_init();
+	SEGGER_RTT_printf(0, "Done!\n");
+	SEGGER_RTT_printf(0, "Scanning as position %d\n",pos);
+	color(60,0,0);
+	net_sync(packet_data,3);
+	SEGGER_RTT_printf(0, "%d clients found on network\n",clients);
+	SEGGER_RTT_printf(0, "Broadcasting as position %d\n",pos);
+	int cnt = 1;
+	
+	while(sync == 0)
 	{
 		packet_data[0] = app_pwm_channel_duty_get(&PWM_B,0);
-		packet_data[1] = app_pwm_channel_duty_get(&PWM_R,0);
+		packet_data[1] = app_pwm_channel_duty_get(&PWM_B,1);
 		packet_data[2] = app_pwm_channel_duty_get(&PWM_G,0);
-		radio_transmit(packet_data);
-		nrf_delay_ms(500);
-		if(radio_receive(packet_data))
-			mesh(packet_data[0],packet_data[1],packet_data[2],rssi);
-		nrf_delay_ms(500);
+		packet_data[3] = pos;
+		
+		if (clients > 1){
+			while (cnt <= clients){
+				if(pos == cnt){
+					SEGGER_RTT_printf(0, "Transmit as Position %d\n",pos);
+					radio_transmit(packet_data);
+					cnt++;
+				}
+				else{
+					SEGGER_RTT_printf(0, "Expecting packet from client %d\n",cnt);
+					if(radio_receive(packet_data)){
+						SEGGER_RTT_printf(0, "Packet received from client %d\n",packet_data[3]);
+						if (packet_data[3] == cnt){
+							SEGGER_RTT_printf(0, "Packet:%d Cnt:%d\n",packet_data[3],cnt);
+							mesh(packet_data[0],packet_data[1],packet_data[2],rssi); //no rssi readings
+							cnt++;
+						}
+						else{
+							fail++;
+							if(fail == 5)
+								pos = cnt;
+							SEGGER_RTT_printf(0, "My Position is now %d\n",cnt);
+						}
+					}
+				}
+			}
+		}
+		else{
+			SEGGER_RTT_printf(0, "Tx Solo\n");
+			radio_transmit(packet_data);
+			net_sync(packet_data,1); //sync pos 1
+		}
 	}
 }
