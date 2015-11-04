@@ -19,10 +19,10 @@ static volatile bool ready_flag;
 int B = 0;
 int R = 0;
 int G = 0;
-int pos = 1;
-int clients = 1;
-int sync = 1;
-uint8_t rssi;
+//int pos = 1;
+//int clients = 1;
+//int sync = 1;
+int rssi;
 uint8_t packet_data[PACKET_LENGTH];
 APP_PWM_INSTANCE(PWM_B,0);
 APP_PWM_INSTANCE(PWM_G,2);
@@ -32,7 +32,7 @@ void pwm_ready_callback(uint32_t pwm_id)
   ready_flag = true;
 }
 
-void timer_init()
+/*void timer_init()
 {
 	NRF_TIMER1->MODE = TIMER_MODE_MODE_Timer;
 	NRF_TIMER1->TASKS_CLEAR = 1;
@@ -42,8 +42,8 @@ void timer_init()
 	NRF_TIMER2->INTENSET = (TIMER_INTENSET_COMPARE1_Enabled << TIMER_INTENSET_COMPARE1_Pos);
 	NVIC_EnableIRQ(TIMER1_IRQn);
 	NRF_TIMER1->TASKS_START = 1;
-	SEGGER_RTT_printf(0, "Syncing to existing network\n");
-}
+	//SEGGER_RTT_printf(0, "Syncing to existing network\n");
+}*/
 
 void color(int blu,int red, int grn)
 {
@@ -78,8 +78,31 @@ void led_init()
 	nrf_delay_ms(150);
 	color(0,100,0);
 	nrf_delay_ms(150);
-	color(0,0,0);
+	
+	int colortable [14][3] = {
+		{100,0,100} , //Aqua
+		{100,0,0} , 	//Blue
+		{100,100,0} , //Fuchsia
+		{50,50,50} ,	//Grey
+		{0,0,50} ,		//Green
+		{0,100,0} ,		//Lime
+		{0,50,0} ,		//Maroon
+		{50,0,0} ,		//Navy
+		{0,50,50} ,		//Olive
+		{50,50,0} ,		//Purple
+		{0,100,0} ,		//Red
+		{75,75,75} ,	//Silver
+		{50,0,50} ,		//Teal
+		{0,100,100} ,	//Yellow
+		};
+	int col = 2;
+	SEGGER_RTT_printf(0, "Position %d in table\n",col);
+	B = colortable[col][0];
+	R = colortable[col][1];
+	G = colortable[col][2];
+	color(B,R,G);
 }
+
 
 void blink(int blu,int red, int grn, int cnt, int spd)
 {
@@ -95,14 +118,12 @@ void blink(int blu,int red, int grn, int cnt, int spd)
 
 void mesh(int tblu, int tred, int tgrn, int tsig)
 {
-	
-	
 	// Do all math in HSV and convert back to RGB/PWM
 	int rblu = app_pwm_channel_duty_get(&PWM_B,0);
 	int rred = app_pwm_channel_duty_get(&PWM_B,1);
 	int rgrn = app_pwm_channel_duty_get(&PWM_G,0);	
-	//if(abs(tsig) < 55)
-	color((rblu+tblu)/2,(rred+tred)/2,(rgrn+tgrn)/2);	
+	if(abs(tsig) < 70)
+		color((rblu+tblu)/2,(rred+tred)/2,(rgrn+tgrn)/2);	
 }
 void clock_setup(void)
 {
@@ -169,7 +190,7 @@ void radio_setup(uint8_t channel)
 void radio_transmit( uint8_t * packet_buffer )
 {
   //Get current LED data
-	B = app_pwm_channel_duty_get(&PWM_B,0);
+	//B = app_pwm_channel_duty_get(&PWM_B,0);
 	R = app_pwm_channel_duty_get(&PWM_B,1);
 	G = app_pwm_channel_duty_get(&PWM_G,0);
 	// For this example the function will block until the packet has completed transmitting
@@ -243,9 +264,6 @@ bool radio_receive( uint8_t * packet_buffer )
   // Since the packet received could be good or bad we need to check the crc
   if( NRF_RADIO->CRCSTATUS != 0 )
   {
-    if(packet_data[3] > clients)
-			clients = packet_data[3];
-		SEGGER_RTT_printf(0, "%d clients found on network\n",clients);
     return true;
   }
   else
@@ -256,7 +274,7 @@ bool radio_receive( uint8_t * packet_buffer )
 }
 
 
-void TIMER1_IRQHandler(int sec)
+/*void TIMER1_IRQHandler(int sec)
 {
 	if(sec > 0)
 	{
@@ -269,9 +287,9 @@ void TIMER1_IRQHandler(int sec)
 		NRF_TIMER1->TASKS_CLEAR = 1;
 		sync = 0;
 	}
-}
+}*/
 
-void net_sync (uint8_t * packet_buffer, int sec)
+/*void net_sync (uint8_t * packet_buffer, int sec)
 {
 	// Make sure radio is in disabled state
   NRF_RADIO->EVENTS_DISABLED = 0;
@@ -320,11 +338,11 @@ void net_sync (uint8_t * packet_buffer, int sec)
   NRF_RADIO->EVENTS_DISABLED = 0;
   NRF_RADIO->TASKS_DISABLE = 1;
   while( NRF_RADIO->EVENTS_DISABLED == 0 );
-}
+}*/
 
 int main(void)
 {
-	int fail = 0;
+	int self = 0;
 	SEGGER_RTT_printf(0, "Starting LED\n");
 	led_init();
 	SEGGER_RTT_printf(0, "Done!\n");
@@ -332,6 +350,27 @@ int main(void)
 	clock_setup();
 	radio_setup(1);
 	SEGGER_RTT_printf(0, "Done!\n");
+	
+	while(true){
+		self++;
+		nrf_delay_ms(rand() % 250 + 250);
+		radio_transmit(packet_data);
+		nrf_delay_ms(100);
+		if(radio_receive(packet_data)){
+			self = 0;
+			mesh(packet_data[0],packet_data[1],packet_data[2],rssi);
+		}
+		SEGGER_RTT_printf(0, "RSSI:%d\n",rssi);
+		if (self > 10){
+			self = 0;
+			color(B,R,G);
+		}
+		}
+	
+	
+	/*OLD Code used to sync to network
+	
+	int fail = 0;
 	SEGGER_RTT_printf(0, "Starting Timers\n");
 	timer_init();
 	SEGGER_RTT_printf(0, "Done!\n");
@@ -381,4 +420,5 @@ int main(void)
 			net_sync(packet_data,1); //sync pos 1
 		}
 	}
+	*/
 }
