@@ -32,11 +32,7 @@
 <layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
-<<<<<<< HEAD
-<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-=======
 <layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
->>>>>>> origin/master
 <layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
@@ -91,10 +87,6 @@
 <layer number="110" name="110" color="7" fill="1" visible="no" active="yes"/>
 <layer number="111" name="111" color="7" fill="1" visible="no" active="yes"/>
 <layer number="112" name="tSilk" color="7" fill="1" visible="no" active="yes"/>
-<<<<<<< HEAD
-<layer number="113" name="ReferenceLS" color="7" fill="1" visible="no" active="no"/>
-=======
->>>>>>> origin/master
 <layer number="116" name="Patch_BOT" color="7" fill="1" visible="no" active="yes"/>
 <layer number="118" name="Rect_Pads" color="7" fill="1" visible="no" active="yes"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="no" active="yes"/>
@@ -108,10 +100,6 @@
 <layer number="131" name="tAdjust" color="7" fill="1" visible="no" active="yes"/>
 <layer number="132" name="bAdjust" color="7" fill="1" visible="no" active="yes"/>
 <layer number="144" name="DrillLegend" color="7" fill="1" visible="no" active="yes"/>
-<<<<<<< HEAD
-<layer number="150" name="Notes" color="7" fill="1" visible="no" active="yes"/>
-=======
->>>>>>> origin/master
 <layer number="151" name="HeatSink" color="7" fill="1" visible="no" active="yes"/>
 <layer number="152" name="_bDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="153" name="FabDoc1" color="7" fill="1" visible="no" active="yes"/>
@@ -143,12 +131,6 @@
 <layer number="222" name="222bmp" color="7" fill="1" visible="no" active="yes"/>
 <layer number="223" name="223bmp" color="7" fill="1" visible="no" active="yes"/>
 <layer number="224" name="224bmp" color="7" fill="1" visible="no" active="yes"/>
-<<<<<<< HEAD
-<layer number="231" name="Eagle3D_PG1" color="7" fill="1" visible="no" active="no"/>
-<layer number="232" name="Eagle3D_PG2" color="7" fill="1" visible="no" active="no"/>
-<layer number="233" name="Eagle3D_PG3" color="7" fill="1" visible="no" active="no"/>
-=======
->>>>>>> origin/master
 <layer number="248" name="Housing" color="7" fill="1" visible="no" active="yes"/>
 <layer number="249" name="Edge" color="7" fill="1" visible="no" active="yes"/>
 <layer number="250" name="Descript" color="7" fill="1" visible="no" active="yes"/>
@@ -176,13 +158,6 @@
 <wire x1="20.193" y1="21.844" x2="20.193" y2="21.336" width="0" layer="41"/>
 <wire x1="18.034" y1="19.177" x2="17.526" y2="19.177" width="0" layer="41"/>
 <wire x1="15.367" y1="21.844" x2="15.367" y2="21.336" width="0" layer="41"/>
-<<<<<<< HEAD
-<text x="5.207" y="13.97" size="0.6096" layer="21" ratio="20">Mingle Disco
-Kris Gibbs
-Brandon Towell
-2/2/15</text>
-=======
->>>>>>> origin/master
 </plain>
 <libraries>
 <library name="nrf51822">
@@ -394,8 +369,6 @@ chip</description>
 </package>
 </packages>
 </library>
-<<<<<<< HEAD
-=======
 <library name="TXC">
 <packages>
 <package name="TXC_CRYSTAL">
@@ -413,7 +386,6 @@ chip</description>
 </package>
 </packages>
 </library>
->>>>>>> origin/master
 <library name="Headers">
 <packages>
 <package name="HEADER.05&quot;PITCH">
@@ -2602,26 +2574,6 @@ This package is identical to 0402-B, but has its tPlace silkscreen layer removed
 </package>
 </packages>
 </library>
-<<<<<<< HEAD
-<library name="TXC">
-<packages>
-<package name="TXC_CRYSTAL">
-<circle x="0.49" y="4.11" radius="0.182" width="0" layer="21"/>
-<smd name="1" x="0.34" y="3.76" dx="1" dy="0.9" layer="1"/>
-<smd name="2" x="2.24" y="3.76" dx="1" dy="0.9" layer="1"/>
-<smd name="3" x="2.24" y="5.21" dx="1" dy="0.9" layer="1"/>
-<smd name="4" x="0.34" y="5.21" dx="1" dy="0.9" layer="1"/>
-<text x="0" y="6.85" size="0.6096" layer="25">&gt;NAME</text>
-<text x="0" y="2.27" size="0.6096" layer="27">&gt;VALUE</text>
-<wire x1="0" y1="5.5" x2="2.5" y2="5.5" width="0.127" layer="21"/>
-<wire x1="2.5" y1="5.5" x2="2.5" y2="3.5" width="0.127" layer="21"/>
-<wire x1="2.5" y1="3.5" x2="0" y2="3.5" width="0.127" layer="21"/>
-<wire x1="0" y1="3.5" x2="0" y2="5.5" width="0.127" layer="21"/>
-</package>
-</packages>
-</library>
-=======
->>>>>>> origin/master
 </libraries>
 <attributes>
 </attributes>
@@ -2838,23 +2790,16 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="NAME" x="14.351" y="6.223" size="0.635" layer="25" font="vector" ratio="20"/>
 <attribute name="VALUE" x="13.986" y="6.101" size="1.016" layer="27"/>
 </element>
-<<<<<<< HEAD
-=======
 <element name="X1" library="TXC" package="TXC_CRYSTAL" value="TXC-CRYSTAL" x="15.621" y="22.479" smashed="yes" rot="R90">
 <attribute name="NAME" x="9.66" y="23.368" size="0.635" layer="25" font="vector" ratio="20" rot="R90"/>
 <attribute name="VALUE" x="14.621" y="22.479" size="1.27" layer="27" rot="R90"/>
 </element>
->>>>>>> origin/master
 <element name="C3" library="rcl" package="C0402" value="12p" x="11.176" y="26.162" smashed="yes">
 <attribute name="NAME" x="10.033" y="26.797" size="0.635" layer="25" font="vector" ratio="20"/>
 <attribute name="VALUE" x="10.541" y="24.257" size="1.27" layer="27"/>
 </element>
 <element name="C4" library="rcl" package="C0402" value="12p" x="11.176" y="21.336" smashed="yes" rot="R180">
-<<<<<<< HEAD
-<attribute name="NAME" x="11.303" y="19.812" size="0.635" layer="25" font="vector" ratio="20"/>
-=======
 <attribute name="NAME" x="11.303" y="19.939" size="0.635" layer="25" font="vector" ratio="20"/>
->>>>>>> origin/master
 <attribute name="VALUE" x="11.811" y="23.241" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="R4" library="adafruit" package="R0402" value="10k" x="31.369" y="25.146" smashed="yes" rot="R90">
@@ -2917,10 +2862,6 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="VALUE" x="24.473" y="26.336" size="0.8" layer="27" font="vector" ratio="15"/>
 <attribute name="NAME" x="25.273" y="27.686" size="0.2" layer="33" ratio="15" align="center"/>
 </element>
-<<<<<<< HEAD
-<element name="XTAL" library="TXC" package="TXC_CRYSTAL" value="TXC-CRYSTAL" x="15.494" y="22.606" rot="R90"/>
-=======
->>>>>>> origin/master
 </elements>
 <signals>
 <signal name="VDD">
@@ -3032,11 +2973,8 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="B1" pad="NEG"/>
 <contactref element="C2" pad="2"/>
 <contactref element="C1" pad="2"/>
-<<<<<<< HEAD
-=======
 <contactref element="X1" pad="2"/>
 <contactref element="X1" pad="4"/>
->>>>>>> origin/master
 <contactref element="C3" pad="2"/>
 <contactref element="C4" pad="2"/>
 <contactref element="R4" pad="2"/>
@@ -3108,11 +3046,7 @@ Please make sure your boards conform to these design rules.</description>
 <via x="16.383" y="27.051" extent="1-16" drill="0.3556"/>
 <via x="13.081" y="24.765" extent="1-16" drill="0.3556"/>
 <via x="11.811" y="27.305" extent="1-16" drill="0.3556"/>
-<<<<<<< HEAD
-<via x="9.144" y="22.86" extent="1-16" drill="0.3556"/>
-=======
 <via x="9.271" y="22.86" extent="1-16" drill="0.3556"/>
->>>>>>> origin/master
 <via x="10.541" y="20.193" extent="1-16" drill="0.3556"/>
 <via x="13.462" y="19.812" extent="1-16" drill="0.3556"/>
 <via x="13.208" y="17.399" extent="1-16" drill="0.3556"/>
@@ -3125,39 +3059,9 @@ Please make sure your boards conform to these design rules.</description>
 <via x="25.908" y="6.604" extent="1-16" drill="0.3556"/>
 <via x="16.002" y="9.398" extent="1-16" drill="0.3556"/>
 <via x="20.32" y="3.81" extent="1-16" drill="0.3556"/>
-<<<<<<< HEAD
-<contactref element="XTAL" pad="2"/>
-<contactref element="XTAL" pad="4"/>
-=======
->>>>>>> origin/master
 </signal>
-<signal name="XTAL">
+<signal name="N$8">
 <contactref element="C3" pad="1"/>
-<<<<<<< HEAD
-<contactref element="U1" pad="37"/>
-<wire x1="10.526" y1="26.162" x2="10.526" y2="24.75" width="0.254" layer="1"/>
-<wire x1="10.526" y1="24.75" x2="10.462796875" y2="24.61513125" width="0.254" layer="1"/>
-<wire x1="10.462796875" y1="24.61513125" x2="10.414" y2="24.511" width="0.254" layer="1"/>
-<wire x1="14.855" y1="23.79" x2="10.627" y2="23.79" width="0.2286" layer="1"/>
-<wire x1="10.627" y1="23.79" x2="10.414" y2="24.003" width="0.2286" layer="1"/>
-<wire x1="10.414" y1="24.003" x2="10.414" y2="24.511" width="0.2286" layer="1"/>
-<contactref element="XTAL" pad="3"/>
-<wire x1="10.284" y1="24.846" x2="10.284" y2="24.793928125" width="0.254" layer="1"/>
-<wire x1="10.284" y1="24.793928125" x2="10.462796875" y2="24.61513125" width="0.254" layer="1"/>
-</signal>
-<signal name="N$9">
-<contactref element="C4" pad="1"/>
-<contactref element="U1" pad="38"/>
-<wire x1="14.855" y1="23.39" x2="13.103" y2="23.39" width="0.2286" layer="1"/>
-<wire x1="13.103" y1="23.39" x2="12.573" y2="22.86" width="0.2286" layer="1"/>
-<wire x1="12.573" y1="22.86" x2="11.775" y2="22.86" width="0.2286" layer="1"/>
-<wire x1="11.826" y1="21.336" x2="11.826" y2="22.911" width="0.254" layer="1"/>
-<contactref element="XTAL" pad="1"/>
-<wire x1="11.826" y1="22.911" x2="11.769" y2="22.911" width="0.254" layer="1"/>
-<wire x1="11.775" y1="22.86" x2="11.775" y2="22.905" width="0.254" layer="1"/>
-<wire x1="11.775" y1="22.905" x2="11.769" y2="22.911" width="0.254" layer="1"/>
-<wire x1="11.769" y1="22.911" x2="11.734" y2="22.946" width="0.254" layer="1"/>
-=======
 <contactref element="X1" pad="3"/>
 <contactref element="U1" pad="37"/>
 <wire x1="10.526" y1="26.162" x2="10.526" y2="24.75" width="0.254" layer="1"/>
@@ -3178,7 +3082,6 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="11.521" y1="22.86" x2="11.861" y2="22.819" width="0.2286" layer="1"/>
 <wire x1="11.826" y1="21.336" x2="11.826" y2="22.784" width="0.254" layer="1"/>
 <wire x1="11.826" y1="22.784" x2="11.861" y2="22.819" width="0.254" layer="1"/>
->>>>>>> origin/master
 </signal>
 <signal name="SWD">
 <contactref element="U1" pad="24"/>
@@ -3441,10 +3344,4 @@ Please make sure your boards conform to these design rules.</description>
 </errors>
 </board>
 </drawing>
-<compatibility>
-<note version="6.3" minversion="6.2.2" severity="warning">
-Since Version 6.2.2 text objects can contain more than one line,
-which will not be processed correctly with this version.
-</note>
-</compatibility>
 </eagle>
