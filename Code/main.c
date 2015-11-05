@@ -25,6 +25,7 @@ int G = 0;
 int rssi;
 uint8_t packet_data[PACKET_LENGTH];
 APP_PWM_INSTANCE(PWM_B,0);
+APP_PWM_INSTANCE(PWM_R,1);
 APP_PWM_INSTANCE(PWM_G,2);
 
 void pwm_ready_callback(uint32_t pwm_id)    
@@ -47,31 +48,24 @@ void pwm_ready_callback(uint32_t pwm_id)
 
 void color(int blu,int red, int grn)
 {
-	int clr = 0;
-	int tblu, tred, tgrn;
-	while(clr == 0)
-	{
 		app_pwm_channel_duty_set(&PWM_B, 0, blu);
 		app_pwm_channel_duty_set(&PWM_G, 0, grn);
-		app_pwm_channel_duty_set(&PWM_B, 1, red);
-		tblu = app_pwm_channel_duty_get(&PWM_B,0);
-		tred = app_pwm_channel_duty_get(&PWM_B,1);
-		tgrn = app_pwm_channel_duty_get(&PWM_G,0);
-		if(tblu == blu && tred == red && tgrn == grn)
-			clr = 1;
-	}
+		app_pwm_channel_duty_set(&PWM_R, 0, red);
 	SEGGER_RTT_printf(0, "Color is set to Blue:%d Red:%d Green:%d\n",blu,red,grn);
 }
 
 void led_init()
 {
-	app_pwm_config_t pwm_cfg_B = APP_PWM_DEFAULT_CONFIG_2CH(5000, LED_B, LED_R);
+	app_pwm_config_t pwm_cfg_B = APP_PWM_DEFAULT_CONFIG_1CH(5000, LED_B);
+	app_pwm_config_t pwm_cfg_R = APP_PWM_DEFAULT_CONFIG_1CH(5000, LED_R);
 	app_pwm_config_t pwm_cfg_G = APP_PWM_DEFAULT_CONFIG_1CH(5000, LED_G);
 	app_pwm_init(&PWM_B, &pwm_cfg_B,pwm_ready_callback);
+	app_pwm_init(&PWM_R, &pwm_cfg_R,pwm_ready_callback);
 	app_pwm_init(&PWM_G, &pwm_cfg_G,pwm_ready_callback);
 	nrf_gpio_range_cfg_output(1,3);
 	app_pwm_enable(&PWM_B);
 	app_pwm_enable(&PWM_G);
+	app_pwm_enable(&PWM_R);
 	color(100,0,0);
 	nrf_delay_ms(150);
 	color(0,0,100);
@@ -95,8 +89,13 @@ void led_init()
 		{50,0,50} ,		//Teal
 		{0,100,100} ,	//Yellow
 		};
-	int col = 2;
+	
+	NRF_RNG->TASKS_START = 1;
+	NRF_RNG->EVENTS_VALRDY = 0;
+	while( NRF_RNG->EVENTS_VALRDY == 0){}	
+	int col = NRF_RNG->VALUE % 14;
 	SEGGER_RTT_printf(0, "Position %d in table\n",col);
+	NRF_RNG->TASKS_STOP = 1;
 	B = colortable[col][0];
 	R = colortable[col][1];
 	G = colortable[col][2];
@@ -122,8 +121,12 @@ void mesh(int tblu, int tred, int tgrn, int tsig)
 	int rblu = app_pwm_channel_duty_get(&PWM_B,0);
 	int rred = app_pwm_channel_duty_get(&PWM_B,1);
 	int rgrn = app_pwm_channel_duty_get(&PWM_G,0);	
-	if(abs(tsig) < 70)
+	if(abs(tsig) < 65){
+		SEGGER_RTT_printf(0, "Meshing\n");
+		SEGGER_RTT_printf(0, "Target Blue: %d,Target Red: %d,Target Green: %d\nMy Blue: %d, My Red: %d,My Green: %d\n",tblu,tred,tgrn,rblu,rred,rgrn);
 		color((rblu+tblu)/2,(rred+tred)/2,(rgrn+tgrn)/2);	
+	}
+	rblu = 0; rred = 0; rgrn = 0;
 }
 void clock_setup(void)
 {
@@ -190,9 +193,9 @@ void radio_setup(uint8_t channel)
 void radio_transmit( uint8_t * packet_buffer )
 {
   //Get current LED data
-	//B = app_pwm_channel_duty_get(&PWM_B,0);
-	R = app_pwm_channel_duty_get(&PWM_B,1);
-	G = app_pwm_channel_duty_get(&PWM_G,0);
+	packet_data[0] = app_pwm_channel_duty_get(&PWM_B,0);
+	packet_data[1] = app_pwm_channel_duty_get(&PWM_R,0);
+	packet_data[2] = app_pwm_channel_duty_get(&PWM_G,0);
 	// For this example the function will block until the packet has completed transmitting
   // Make sure radio is in disabled state
   NRF_RADIO->EVENTS_DISABLED = 0;
@@ -352,20 +355,25 @@ int main(void)
 	SEGGER_RTT_printf(0, "Done!\n");
 	
 	while(true){
+		NRF_RNG->TASKS_START = 1;
+		NRF_RNG->EVENTS_VALRDY = 0;
+		while( NRF_RNG->EVENTS_VALRDY == 0){}	
 		self++;
-		nrf_delay_ms(rand() % 250 + 250);
+		nrf_delay_ms(NRF_RNG->VALUE % 250 + 250);
+		SEGGER_RTT_printf(0, "Delaying %d\n",NRF_RNG->VALUE % 250 + 250);
 		radio_transmit(packet_data);
 		nrf_delay_ms(100);
 		if(radio_receive(packet_data)){
-			self = 0;
+			if(rssi < 65)
+				self = 0;
 			mesh(packet_data[0],packet_data[1],packet_data[2],rssi);
 		}
 		SEGGER_RTT_printf(0, "RSSI:%d\n",rssi);
-		if (self > 10){
+		if (self > 5){
 			self = 0;
 			color(B,R,G);
 		}
-		}
+	}
 	
 	
 	/*OLD Code used to sync to network
