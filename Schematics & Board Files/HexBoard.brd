@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.1.0">
+<eagle version="7.3.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -23,20 +23,20 @@
 <layer number="13" name="Route13" color="4" fill="5" visible="no" active="yes"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="yes"/>
 <layer number="15" name="Route15" color="4" fill="6" visible="no" active="yes"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
-<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
 <layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
@@ -53,12 +53,12 @@
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
-<layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="1" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="7" fill="1" visible="no" active="no"/>
@@ -163,7 +163,7 @@
 <wire x1="20.193" y1="21.844" x2="20.193" y2="21.336" width="0" layer="41"/>
 <wire x1="18.034" y1="19.177" x2="17.526" y2="19.177" width="0" layer="41"/>
 <wire x1="15.367" y1="21.844" x2="15.367" y2="21.336" width="0" layer="41"/>
-<text x="31.877" y="13.335" size="0.6096" layer="25" ratio="20">MIngle Disco
+<text x="23.749" y="11.176" size="0.762" layer="25" ratio="20">Mingle Disco
 Kris Gibbs
 Brandon Towell
 2015</text>
@@ -2769,11 +2769,11 @@ Please make sure your boards conform to these design rules.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="U1" library="nrf51822" package="QFN48-6X6MM" value="" x="17.78" y="21.59" smashed="yes">
-<attribute name="NAME" x="13.335" y="18.415" size="0.635" layer="25" font="vector" ratio="20"/>
+<element name="U1" library="nrf51822" package="QFN48-6X6MM" value="NRF51822-QFAC-R7" x="17.78" y="21.59" smashed="yes">
+<attribute name="NAME" x="13.208" y="18.415" size="0.635" layer="25" font="vector" ratio="20"/>
 <attribute name="VALUE" x="15.911" y="21.598" size="0.635" layer="27" ratio="10"/>
 </element>
-<element name="LED1" library="rgb-led-separate" package="LED-3528" value="" x="10.033" y="13.462" smashed="yes">
+<element name="LED1" library="rgb-led-separate" package="LED-3528" value="SMLV56RGB1W1" x="10.033" y="13.462" smashed="yes">
 <attribute name="NAME" x="8.333" y="15.462" size="0.635" layer="25" font="vector" ratio="20"/>
 <attribute name="VALUE" x="8.333" y="10.662" size="0.8" layer="27" font="vector" ratio="15"/>
 <attribute name="NAME" x="10.033" y="13.462" size="0.5" layer="33" ratio="15" rot="R180" align="center"/>
@@ -2800,7 +2800,7 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="VALUE" x="13.986" y="6.101" size="1.016" layer="27"/>
 </element>
 <element name="C3" library="rcl" package="C0402" value="12p" x="11.176" y="26.162" smashed="yes">
-<attribute name="NAME" x="10.033" y="26.797" size="0.635" layer="25" font="vector" ratio="20"/>
+<attribute name="NAME" x="10.16" y="27.051" size="0.635" layer="25" font="vector" ratio="20"/>
 <attribute name="VALUE" x="10.541" y="24.257" size="1.27" layer="27"/>
 </element>
 <element name="C4" library="rcl" package="C0402" value="12p" x="11.176" y="21.336" smashed="yes" rot="R180">
@@ -2820,7 +2820,7 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="VALUE" x="20.701" y="24.384" size="1.27" layer="27"/>
 </element>
 <element name="C6" library="rcl" package="C0402" value="1p" x="23.368" y="27.051" smashed="yes" rot="R270">
-<attribute name="NAME" x="22.098" y="28.448" size="0.635" layer="25" font="vector" ratio="20"/>
+<attribute name="NAME" x="22.987" y="28.321" size="0.635" layer="25" font="vector" ratio="20" rot="R90"/>
 <attribute name="VALUE" x="21.463" y="27.686" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="C7" library="rcl" package="C0402" value="1.5p" x="25.273" y="28.956" smashed="yes" rot="R180">
@@ -2832,7 +2832,7 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="VALUE" x="20.701" y="25.781" size="1.27" layer="27"/>
 </element>
 <element name="C9" library="rcl" package="C0402" value="100n" x="13.462" y="21.463" smashed="yes" rot="R270">
-<attribute name="NAME" x="13.843" y="22.733" size="0.635" layer="25" font="vector" ratio="20" rot="R90"/>
+<attribute name="NAME" x="13.716" y="22.733" size="0.635" layer="25" font="vector" ratio="20" rot="R90"/>
 <attribute name="VALUE" x="11.557" y="22.098" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="C10" library="rcl" package="C0402" value="1n" x="15.748" y="25.908" smashed="yes">
@@ -2867,7 +2867,10 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="VALUE" x="24.473" y="26.336" size="0.8" layer="27" font="vector" ratio="15"/>
 <attribute name="NAME" x="25.273" y="27.686" size="0.2" layer="33" ratio="15" align="center"/>
 </element>
-<element name="U$2" library="TXC" package="TXC_CRYSTAL" value="TXC-CRYSTAL" x="10.795" y="23.749" rot="R270"/>
+<element name="X1" library="TXC" package="TXC_CRYSTAL" value="16 MHz" x="10.795" y="23.749" smashed="yes" rot="R270">
+<attribute name="NAME" x="8.509" y="23.36" size="0.635" layer="25" ratio="20"/>
+<attribute name="VALUE" x="8.747" y="25.019" size="0.6096" layer="27" rot="R270"/>
+</element>
 </elements>
 <signals>
 <signal name="VDD">
@@ -3051,15 +3054,15 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="23.129" y1="26.289" x2="23.368" y2="26.401" width="0.2286" layer="1"/>
 <wire x1="27.813" y1="31.115" x2="27.813" y2="28.575" width="0.762" layer="1"/>
 <wire x1="16.256" y1="20.066" x2="17.78" y2="21.59" width="0.254" layer="1"/>
-<via x="24.511" y="26.289" extent="1-16" drill="0.3556"/>
-<via x="25.019" y="24.892" extent="1-16" drill="0.3556"/>
+<via x="24.511" y="26.416" extent="1-16" drill="0.3556"/>
+<via x="24.638" y="24.892" extent="1-16" drill="0.3556"/>
 <via x="23.495" y="28.956" extent="1-16" drill="0.3556"/>
 <via x="19.939" y="28.956" extent="1-16" drill="0.3556"/>
 <via x="16.129" y="28.956" extent="1-16" drill="0.3556"/>
 <via x="16.383" y="27.051" extent="1-16" drill="0.3556"/>
 <via x="13.081" y="24.765" extent="1-16" drill="0.3556"/>
 <via x="11.811" y="27.305" extent="1-16" drill="0.3556"/>
-<via x="9.271" y="22.86" extent="1-16" drill="0.3556"/>
+<via x="9.017" y="22.86" extent="1-16" drill="0.3556"/>
 <via x="10.541" y="20.193" extent="1-16" drill="0.3556"/>
 <via x="13.462" y="19.812" extent="1-16" drill="0.3556"/>
 <via x="13.208" y="17.399" extent="1-16" drill="0.3556"/>
@@ -3070,10 +3073,10 @@ Please make sure your boards conform to these design rules.</description>
 <via x="25.908" y="9.398" extent="1-16" drill="0.3556"/>
 <via x="24.638" y="8.001" extent="1-16" drill="0.3556"/>
 <via x="25.908" y="6.604" extent="1-16" drill="0.3556"/>
-<via x="14.986" y="6.35" extent="1-16" drill="0.3556"/>
-<via x="14.986" y="9.398" extent="1-16" drill="0.3556"/>
-<contactref element="U$2" pad="2"/>
-<contactref element="U$2" pad="4"/>
+<via x="15.875" y="6.604" extent="1-16" drill="0.3556"/>
+<via x="15.875" y="9.398" extent="1-16" drill="0.3556"/>
+<contactref element="X1" pad="2"/>
+<contactref element="X1" pad="4"/>
 </signal>
 <signal name="N$8">
 <contactref element="C3" pad="1"/>
@@ -3084,7 +3087,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="14.855" y1="23.79" x2="10.627" y2="23.79" width="0.2286" layer="1"/>
 <wire x1="10.627" y1="23.79" x2="10.414" y2="24.003" width="0.2286" layer="1"/>
 <wire x1="10.414" y1="24.003" x2="10.414" y2="24.716" width="0.2286" layer="1"/>
-<contactref element="U$2" pad="1"/>
+<contactref element="X1" pad="1"/>
 <wire x1="10.237" y1="24.679" x2="10.343" y2="24.933" width="0.254" layer="1"/>
 <wire x1="10.343" y1="24.933" x2="10.526" y2="24.75" width="0.254" layer="1"/>
 </signal>
@@ -3096,7 +3099,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="12.573" y1="22.86" x2="11.521" y2="22.86" width="0.2286" layer="1"/>
 <wire x1="11.826" y1="21.336" x2="11.826" y2="22.894" width="0.254" layer="1"/>
 <wire x1="11.521" y1="22.86" x2="11.521" y2="22.867" width="0.254" layer="1"/>
-<contactref element="U$2" pad="3"/>
+<contactref element="X1" pad="3"/>
 <wire x1="11.521" y1="22.86" x2="11.606" y2="22.86" width="0.254" layer="1"/>
 <wire x1="11.606" y1="22.86" x2="11.687" y2="22.779" width="0.254" layer="1"/>
 <wire x1="11.826" y1="22.894" x2="11.802" y2="22.894" width="0.254" layer="1"/>
@@ -3353,11 +3356,71 @@ Please make sure your boards conform to these design rules.</description>
 <approved hash="19,1,ffeb7cea51ca968b"/>
 <approved hash="7,39,1ed25d13dd139ed2"/>
 <approved hash="7,39,1ed3dc935c939ed3"/>
-<approved hash="19,1,be9780a99e50a06e"/>
+<approved hash="18,29,04aab32b523354b7"/>
+<approved hash="18,29,afbab9e8180a767c"/>
+<approved hash="18,29,cd0756fdd066e7e5"/>
+<approved hash="18,29,735ed71f7dfb75c3"/>
+<approved hash="18,29,b867ba08182e61a5"/>
+<approved hash="18,29,d1e508d7061fded2"/>
+<approved hash="18,29,615a4a8bead0b925"/>
+<approved hash="18,29,75454aafe936ad38"/>
+<approved hash="18,29,bf54131e7dfb75c9"/>
+<approved hash="18,29,090d9afdd067e7ef"/>
+<approved hash="18,29,2399f2f9b8b48d30"/>
+<approved hash="18,29,1cedc85dbf7bb6e1"/>
+<approved hash="18,29,93473c653c6a9348"/>
+<approved hash="18,29,a5bb06590656a5b4"/>
+<approved hash="18,29,8b1734b534ba8b18"/>
+<approved hash="18,29,9d4b3e693e669d44"/>
+<approved hash="18,29,976f308d30829760"/>
+<approved hash="18,29,91733291329e917c"/>
+<approved hash="18,29,951b36b936b69514"/>
+<approved hash="18,29,9f5f387d38729f50"/>
+<approved hash="18,29,8f3f28dd28d28f30"/>
+<approved hash="18,29,89032aa12aae890c"/>
+<approved hash="18,29,9bb70455045a9bb8"/>
+<approved hash="18,29,99a33a413a4e99ac"/>
+<approved hash="18,29,9a2bb389738f5a2d"/>
+<approved hash="18,29,6e2d8f8f4f8cae2e"/>
+<approved hash="18,29,722f9b8d5b92b230"/>
+<approved hash="18,29,4631979357908632"/>
+<approved hash="18,29,4a326390a3968a34"/>
+<approved hash="18,29,5e347f96bf949e36"/>
+<approved hash="18,29,22364b948b9ae238"/>
+<approved hash="18,29,3638479a8798f63a"/>
+<approved hash="18,29,3a3a5398939efa3c"/>
+<approved hash="18,29,0e3c2f9eef9cce3e"/>
+<approved hash="18,29,123e3b9cfba2d200"/>
+<approved hash="18,29,e60037a2f7a02602"/>
+<approved hash="18,29,b95f9e3d5e3b7959"/>
+<approved hash="18,29,4d59a23b62388d5a"/>
+<approved hash="18,29,515bb63976269144"/>
+<approved hash="18,29,6545ba277a24a546"/>
+<approved hash="18,29,69464e248e22a940"/>
+<approved hash="18,29,7d4052229220bd42"/>
+<approved hash="18,29,01426620a62ec14c"/>
+<approved hash="18,29,154c6a2eaa2cd54e"/>
+<approved hash="18,29,194e7e2cbe2ad948"/>
+<approved hash="18,29,2d48022ac228ed4a"/>
+<approved hash="18,29,314a1628d616f174"/>
+<approved hash="18,29,c5741a16da140576"/>
+<approved hash="18,29,331dd4ffd4ff331d"/>
+<approved hash="18,29,2b4dccafccaf2b4d"/>
+<approved hash="18,29,3521d683d6833521"/>
+<approved hash="18,29,2939ca9bca9b2939"/>
+<approved hash="18,29,2d51ceb3ceb32d51"/>
+<approved hash="18,29,1999fa7bfa7b1999"/>
+<approved hash="18,29,2f65c047c0472f65"/>
+<approved hash="18,29,2795f877f8772795"/>
+<approved hash="18,29,237dc45fc45f237d"/>
+<approved hash="18,29,2581c663c6632581"/>
+<approved hash="18,29,3735c897c8973735"/>
+<approved hash="18,29,2169c24bc24b2169"/>
 <approved hash="19,1,b9e387ddb8588666"/>
+<approved hash="19,1,be9780a99e50a06e"/>
 <approved hash="19,1,8a68545654d18aef"/>
-<approved hash="19,1,de8878b66670c04e"/>
 <approved hash="19,1,d9fc7fc24078e646"/>
+<approved hash="19,1,de8878b66670c04e"/>
 <approved hash="19,1,5730a4f88eeb9c14"/>
 <approved hash="19,1,57aaf715fe62ee91"/>
 </errors>
