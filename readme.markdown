@@ -8,7 +8,7 @@ Quick Links:
 
 [Stencils](https://github.com/psu-epl/lid-button/wiki/The-Many-Masks-of-LID)
 
-[Solder Paste](https://github.com/psu-epl/lid-button/wiki/Solder-Flux-Prep)
+[Solder Paste](https://github.com/psu-epl/lid-button/wiki/Solder-Paste-Prep)
 
 [Stuffing the board](https://github.com/psu-epl/lid-button/wiki/Stuffing-the-Board)
 
