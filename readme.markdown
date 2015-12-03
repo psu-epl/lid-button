@@ -10,7 +10,7 @@ Quick Links:
 
 [Board Routing](https://github.com/psu-epl/lid-button/wiki/Board-Routing)
 
-[Applying Masks](https://github.com/psu-epl/lid-button/wiki/The-Many-Masks-of-LID)
+[Stencils](https://github.com/psu-epl/lid-button/wiki/The-Many-Masks-of-LID)
 
 [Solder Flux](https://github.com/psu-epl/lid-button/wiki/Solder-Flux-Prep)
 
