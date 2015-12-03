@@ -14,7 +14,7 @@ Quick Links:
 
 [Reflow Oven](https://github.com/psu-epl/lid-button/wiki/Reflow)
 
-[Solder Mask]()
+[Solder Mask](https://github.com/psu-epl/lid-button/wiki/Applying-Solder-Mask)
 
 [Coding the Board](https://github.com/psu-epl/lid-button/wiki/Coding-the-Board)
 
