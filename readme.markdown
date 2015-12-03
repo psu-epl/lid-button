@@ -4,20 +4,20 @@ Starting fresh? Go [here](starting page of board)
 
 Quick Links:
 
-[Board Creation]()
+[Board Creation](https://github.com/psu-epl/lid-button/wiki/Board-Creation)
 
-[Screens/Layers]()
+[Screens/Layers](https://github.com/psu-epl/lid-button/wiki/Screens-and-Layers)
 
-[Board Routing]()
+[Board Routing](https://github.com/psu-epl/lid-button/wiki/Board-Routing)
 
-[Applying Masks]()
+[Applying Masks](https://github.com/psu-epl/lid-button/wiki/The-Many-Masks-of-LID)
 
-[Solder Flux]()
+[Solder Flux](https://github.com/psu-epl/lid-button/wiki/Solder-Flux-Prep)
 
-[Stuffing the board]()
+[Stuffing the board](https://github.com/psu-epl/lid-button/wiki/Stuffing-the-Board)
 
-[Reflow Oven]()
+[Reflow Oven](https://github.com/psu-epl/lid-button/wiki/Reflow)
 
-[Coding the Board]()
+[Coding the Board](https://github.com/psu-epl/lid-button/wiki/Coding-the-Board)
 
-[Enclosure]()
+[Enclosure](https://github.com/psu-epl/lid-button/wiki/Enclosure)
