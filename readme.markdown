@@ -6,13 +6,9 @@ Quick Links:
 
 [Board Creation](https://github.com/psu-epl/lid-button/wiki/Board-Creation)
 
-[Screens/Layers](https://github.com/psu-epl/lid-button/wiki/Screens-and-Layers)
-
-[Board Routing](https://github.com/psu-epl/lid-button/wiki/Board-Routing)
-
 [Stencils](https://github.com/psu-epl/lid-button/wiki/The-Many-Masks-of-LID)
 
-[Solder Flux](https://github.com/psu-epl/lid-button/wiki/Solder-Flux-Prep)
+[Solder Paste](https://github.com/psu-epl/lid-button/wiki/Solder-Flux-Prep)
 
 [Stuffing the board](https://github.com/psu-epl/lid-button/wiki/Stuffing-the-Board)
 
