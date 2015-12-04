@@ -6,6 +6,8 @@ Quick Links:
 
 [Board Routing](https://github.com/psu-epl/lid-button/wiki/Board-Routing)
 
+[Plating Thru Holes](https://github.com/psu-epl/lid-button/wiki/Plating-Thru-Holes)
+
 [Solder Mask](https://github.com/psu-epl/lid-button/wiki/Solder-Mask)
 
 [Solder Paste](https://github.com/psu-epl/lid-button/wiki/Solder-Paste-Prep)
