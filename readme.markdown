@@ -6,7 +6,7 @@ Quick Links:
 
 [Board Creation](https://github.com/psu-epl/lid-button/wiki/Board-Creation)
 
-[Solder Mask](https://github.com/psu-epl/lid-button/wiki/The-Many-Masks-of-LID)
+[Solder Mask](https://github.com/psu-epl/lid-button/wiki/Solder-Mask)
 
 [Solder Paste](https://github.com/psu-epl/lid-button/wiki/Solder-Paste-Prep)
 
