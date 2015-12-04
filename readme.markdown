@@ -20,7 +20,7 @@ Quick Links:
 
 [Reflow Oven](https://github.com/psu-epl/lid-button/wiki/Reflow)
 
-[Programming the Micro Controller](https://github.com/psu-epl/lid-button/wiki/Coding-the-Board)
+[Programming the Microcontroller](https://github.com/psu-epl/lid-button/wiki/Coding-the-Board)
 
 [Final board test](url)
 
