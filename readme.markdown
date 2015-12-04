@@ -20,6 +20,6 @@ Quick Links:
 
 [Programming the Micro Controller](https://github.com/psu-epl/lid-button/wiki/Coding-the-Board)
 
-[Fianl board test](url)
+[Final board test](url)
 
 [Enclosure](https://github.com/psu-epl/lid-button/wiki/Enclosure)
