@@ -6,15 +6,13 @@ Quick Links:
 
 [Board Creation](https://github.com/psu-epl/lid-button/wiki/Board-Creation)
 
-[Stencils](https://github.com/psu-epl/lid-button/wiki/The-Many-Masks-of-LID)
+[Solder Mask](https://github.com/psu-epl/lid-button/wiki/The-Many-Masks-of-LID)
 
 [Solder Paste](https://github.com/psu-epl/lid-button/wiki/Solder-Paste-Prep)
 
 [Stuffing the board](https://github.com/psu-epl/lid-button/wiki/Stuffing-the-Board)
 
 [Reflow Oven](https://github.com/psu-epl/lid-button/wiki/Reflow)
-
-[Solder Mask](https://github.com/psu-epl/lid-button/wiki/Applying-Solder-Mask)
 
 [Coding the Board](https://github.com/psu-epl/lid-button/wiki/Coding-the-Board)
 
