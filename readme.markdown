@@ -10,7 +10,7 @@ Quick Links:
 
 [Testing the board part one](https://github.com/psu-epl/lid-button/wiki/Testing-the-board)
 
-[Solder Mask](https://github.com/psu-epl/lid-button/wiki/Solder-Mask)
+[Solder Paste Stencil](https://github.com/psu-epl/lid-button/wiki/Solder-Mask)
 
 [Solder Paste](https://github.com/psu-epl/lid-button/wiki/Solder-Paste-Prep)
 
