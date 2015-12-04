@@ -8,6 +8,8 @@ Quick Links:
 
 [Plating Thru Holes](https://github.com/psu-epl/lid-button/wiki/Plating-Thru-Holes)
 
+[Testing the board part one](url)
+
 [Solder Mask](https://github.com/psu-epl/lid-button/wiki/Solder-Mask)
 
 [Solder Paste](https://github.com/psu-epl/lid-button/wiki/Solder-Paste-Prep)
@@ -17,5 +19,7 @@ Quick Links:
 [Reflow Oven](https://github.com/psu-epl/lid-button/wiki/Reflow)
 
 [Coding the Board](https://github.com/psu-epl/lid-button/wiki/Coding-the-Board)
+
+[Fianl board test](url)
 
 [Enclosure](https://github.com/psu-epl/lid-button/wiki/Enclosure)
