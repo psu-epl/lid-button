@@ -4,7 +4,7 @@ Starting fresh? Go [here](starting page of board)
 
 Quick Links:
 
-[Board Creation](https://github.com/psu-epl/lid-button/wiki/Board-Creation)
+[Board Routing](https://github.com/psu-epl/lid-button/wiki/Board-Routing)
 
 [Solder Mask](https://github.com/psu-epl/lid-button/wiki/Solder-Mask)
 
