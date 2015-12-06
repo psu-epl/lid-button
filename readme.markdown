@@ -1,6 +1,6 @@
 LID Disco Button
 ----
-Starting fresh? Go [here](starting page of board)
+Starting fresh? Go [here](https://github.com/psu-epl/lid-button/wiki)
 
 Quick Links:
 
