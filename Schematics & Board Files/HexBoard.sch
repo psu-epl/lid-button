@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.3.0">
+<eagle version="7.1.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="2" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -2835,16 +2835,16 @@ type 0309, grid 2.5 mm</description>
 <package name="16MM-COINCELL-KEYSTONE">
 <pad name="POS@1" x="-9.1948" y="0" drill="0.7" diameter="3.81" shape="square"/>
 <pad name="POS@2" x="10.4648" y="0" drill="0.7" diameter="3.81" shape="square"/>
-<circle x="0" y="0" radius="8" width="0.127" layer="21"/>
-<wire x1="-3.2" y1="-8.72" x2="3.2" y2="-8.72" width="0.127" layer="21"/>
-<wire x1="8.435" y1="3.2" x2="8.435" y2="-3.2" width="0.127" layer="21"/>
-<wire x1="-8.435" y1="3.2" x2="-8.435" y2="-3.2" width="0.127" layer="21"/>
-<wire x1="-8.435" y1="-3.2" x2="-3.2" y2="-8.72" width="0.127" layer="21"/>
-<wire x1="3.2" y1="-8.72" x2="8.435" y2="-3.2" width="0.127" layer="21"/>
-<wire x1="-6" y1="6.35" x2="6" y2="6.35" width="0.127" layer="21"/>
-<wire x1="6" y1="6.35" x2="8.435" y2="3.2" width="0.127" layer="21"/>
-<wire x1="-8.435" y1="3.2" x2="-6" y2="6.35" width="0.127" layer="21"/>
-<smd name="NEG" x="0" y="0" dx="7" dy="7" layer="1"/>
+<circle x="0.762" y="0" radius="8" width="0.127" layer="21"/>
+<wire x1="-2.184" y1="-8.72" x2="4.216" y2="-8.72" width="0.127" layer="21"/>
+<wire x1="8.816" y1="3.327" x2="8.816" y2="-3.327" width="0.127" layer="21"/>
+<wire x1="-7.546" y1="3.581" x2="-7.546" y2="-3.454" width="0.127" layer="21"/>
+<wire x1="-7.546" y1="-3.454" x2="-2.184" y2="-8.72" width="0.127" layer="21"/>
+<wire x1="4.216" y1="-8.72" x2="8.816" y2="-3.327" width="0.127" layer="21"/>
+<wire x1="-4.857" y1="6.731" x2="7.143" y2="6.731" width="0.127" layer="21"/>
+<wire x1="7.143" y1="6.731" x2="8.816" y2="3.327" width="0.127" layer="21"/>
+<wire x1="-7.546" y1="3.581" x2="-4.857" y2="6.731" width="0.127" layer="21"/>
+<smd name="NEG" x="0.762" y="0" dx="12.842" dy="12.842" layer="1" roundness="38"/>
 </package>
 </packages>
 <symbols>
