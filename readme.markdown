@@ -12,7 +12,7 @@ Quick Links:
 
 [Solder Mask](https://github.com/psu-epl/lid-button/wiki/Applying-Solder-Mask)
 
-[Solder Paste Stencil](https://github.com/psu-epl/lid-button/wiki/Solder-Mask)
+[Solder Paste Stencil](https://github.com/psu-epl/lid-button/wiki/Solder-Paste-Stencil)
 
 [Solder Paste](https://github.com/psu-epl/lid-button/wiki/Solder-Paste-Prep)
 
