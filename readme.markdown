@@ -26,6 +26,8 @@ Quick Links:
 
 [Final Board Test](https://github.com/psu-epl/lid-button/wiki/Final-Board-Test)
 
-[Enclosure](https://github.com/psu-epl/lid-button/wiki/Enclosure)
+[Enclosure Bottom](https://github.com/psu-epl/lid-button/wiki/Enclosure-Bottom)
+
+[Enclosure Top](url)
 
 [About this Project](Link to about page)
