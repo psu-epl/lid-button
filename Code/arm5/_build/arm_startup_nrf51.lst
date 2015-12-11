@@ -346,24 +346,26 @@ ARM Macro Assembler    Page 6
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0 --apcs=interw
 ork --depend=.\_build\arm_startup_nrf51.d -o.\_build\arm_startup_nrf51.o -I\\ps
-f\Home\Downloads\arm5-2\RTE -I\\psf\Home\Downloads\arm5-2\RTE\nRF_Drivers\nRF51
-422_xxAC -I\\psf\Home\Downloads\arm5-2\RTE\nRF_Libraries\nRF51422_xxAC -IC:\Kei
-l_v5\ARM\PACK\ARM\CMSIS\4.4.0\CMSIS\Include -IC:\Keil_v5\ARM\PACK\NordicSemicon
-ductor\nRF_DeviceFamilyPack\8.0.3\Device\Include -IC:\Keil_v5\ARM\PACK\NordicSe
-miconductor\nRF_Drivers\3.0.1\common -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\
-nRF_Drivers\3.0.1\config -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\
-3.0.1\gpiote -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\hal -I
-C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\nrf_soc_nosd -IC:\Kei
-l_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\ppi -IC:\Keil_v5\ARM\PACK\N
-ordicSemiconductor\nRF_Drivers\3.0.1\timer -IC:\Keil_v5\ARM\PACK\NordicSemicond
-uctor\nRF_Drivers\3.0.1\uart -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Exam
-ples\9.0.0\bsp -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\3.0.1\pw
-m -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\3.0.1\timer -IC:\Keil
-_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\3.0.1\util --predefine="__EVAL S
-ETA 1" --predefine="__UVISION_VERSION SETA 516" --predefine="_RTE_ SETA 1" --pr
-edefine="NRF51 SETA 1" --predefine="BSP_DEFINES_ONLY SETA 1" --predefine="BOARD
-_PCA10028 SETA 1" --predefine="NRF51 SETA 1" --list=.\_build\arm_startup_nrf51.
-lst RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s
+f\Home\Documents\lid-button\Code\arm5\RTE -I\\psf\Home\Documents\lid-button\Cod
+e\arm5\RTE\nRF_Drivers\nRF51422_xxAC -I\\psf\Home\Documents\lid-button\Code\arm
+5\RTE\nRF_Libraries\nRF51422_xxAC -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.4.0\CMSIS\I
+nclude -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.4.0\CMSIS\RTOS\RTX\INC -IC:\Keil_v5\AR
+M\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include -IC:\Keil_
+v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\common -IC:\Keil_v5\ARM\PACK\
+NordicSemiconductor\nRF_Drivers\3.0.1\config -IC:\Keil_v5\ARM\PACK\NordicSemico
+nductor\nRF_Drivers\3.0.1\gpiote -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_
+Drivers\3.0.1\hal -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\n
+rf_soc_nosd -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\ppi -IC
+:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\timer -IC:\Keil_v5\ARM
+\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\uart -IC:\Keil_v5\ARM\PACK\NordicSe
+miconductor\nRF_Examples\9.0.0\bsp -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nR
+F_Libraries\3.0.1\pwm -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\3
+.0.1\timer -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\3.0.1\util -
+-predefine="__RTX SETA 1" --predefine="__EVAL SETA 1" --predefine="__UVISION_VE
+RSION SETA 516" --predefine="_RTE_ SETA 1" --predefine="NRF51 SETA 1" --predefi
+ne="BSP_DEFINES_ONLY SETA 1" --predefine="BOARD_PCA10028 SETA 1" --predefine="N
+RF51 SETA 1" --list=.\_build\arm_startup_nrf51.lst RTE\Device\nRF51422_xxAC\arm
+_startup_nrf51.s
 
 
 
@@ -897,4 +899,4 @@ Symbol: __use_two_region_memory
       None
 Comment: __use_two_region_memory unused
 3 symbols
-397 symbols in table
+398 symbols in table

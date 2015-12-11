@@ -15,7 +15,7 @@
 .\_build\nrf_drv_ppi.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\ppi\nrf_drv_ppi.h
 .\_build\nrf_drv_ppi.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\3.0.1\util\sdk_errors.h
 .\_build\nrf_drv_ppi.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\nrf_soc_nosd\nrf_error.h
-.\_build\nrf_drv_ppi.o: \\psf\Home\Downloads\arm5-2\RTE\nRF_Drivers\nRF51422_xxAC\nrf_ppi.h
+.\_build\nrf_drv_ppi.o: \\psf\Home\Documents\lid-button\Code\arm5\RTE\nRF_Drivers\nRF51422_xxAC\nrf_ppi.h
 .\_build\nrf_drv_ppi.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\_build\nrf_drv_ppi.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\3.0.1\util\sdk_resources.h
 .\_build\nrf_drv_ppi.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\common\nrf_drv_common.h

@@ -21,22 +21,20 @@ Target DLL:      Segger\JL2CM3.dll V2.99.15.2
 Dialog DLL:      TARMCM1.DLL V1.9.0.0
  
 <h2>Project:</h2>
-\\psf\Home\Downloads\arm5-2\blinky_blank_pca10028.uvprojx
-Project File Date:  10/26/2015
+\\psf\Home\Documents\lid-button\Code\arm5\blinky_blank_pca10028.uvprojx
+Project File Date:  11/02/2015
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 (build 20)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
-Rebuild target 'nrf51422_xxac'
-compiling Test.c...
-..\..\Documents\lid-button\Code\arm5\Test.c(204): warning:  #1-D: last line of file ends without a newline
-  }
-..\..\Documents\lid-button\Code\arm5\Test.c: 1 warning, 0 errors
+Build target 'nrf51422_xxac'
+compiling main.c...
 compiling SEGGER_RTT.c...
 compiling SEGGER_RTT_printf.c...
 C:\Keil_v5\ARM\Pack\NordicSemiconductor\RTT\SEGGER_RTT_printf.c(300): warning:  #111-D: statement is unreachable
           default:  goto FilterFieldWidth;                   break;
 C:\Keil_v5\ARM\Pack\NordicSemiconductor\RTT\SEGGER_RTT_printf.c: 1 warning, 0 errors
 compiling RTT_Syscalls_KEIL.c...
+compiling RTX_Conf_CM.c...
 assembling arm_startup_nrf51.s...
 compiling system_nrf51.c...
 compiling nrf_drv_common.c...
@@ -52,17 +50,19 @@ compiling app_timer.c...
 compiling app_util_platform.c...
 compiling nrf_assert.c...
 linking...
-Program Size: Code=8656 RO-data=360 RW-data=212 ZI-data=5396  
+Program Size: Code=14188 RO-data=732 RW-data=284 ZI-data=7780  
 FromELF: creating hex file...
-".\_build\nrf51422_xxac.axf" - 0 Error(s), 2 Warning(s).
+".\_build\nrf51422_xxac.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: ARM
                 http://www.keil.com/pack/ARM.CMSIS.4.4.0.pack
-                ARM::CMSIS:CORE:4.2.0
+                ::CMSIS:RTOS:1.0 (API)
                 CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: RTOS Version: 1.0
    * Component: CORE Version: 4.2.0
+   * Component: Keil RTX Version: 4.79.0
 
 Package Vendor: NordicSemiconductor
                 http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_DeviceFamilyPack/NordicSemiconductor.nRF_DeviceFamilyPack.8.0.3.pack
@@ -105,10 +105,11 @@ Package Vendor: NordicSemiconductor
    * Component: app_util Variant: No_softdevice Version: 3.0.1
 
 <h2>Collection of Component include folders:</h2>
-  \\psf\Home\Downloads\arm5-2\RTE
-  \\psf\Home\Downloads\arm5-2\RTE\nRF_Drivers\nRF51422_xxAC
-  \\psf\Home\Downloads\arm5-2\RTE\nRF_Libraries\nRF51422_xxAC
+  \\psf\Home\Documents\lid-button\Code\arm5\RTE
+  \\psf\Home\Documents\lid-button\Code\arm5\RTE\nRF_Drivers\nRF51422_xxAC
+  \\psf\Home\Documents\lid-button\Code\arm5\RTE\nRF_Libraries\nRF51422_xxAC
   C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.4.0\CMSIS\Include
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.4.0\CMSIS\RTOS\RTX\INC
   C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include
   C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\common
   C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\config
@@ -125,7 +126,24 @@ Package Vendor: NordicSemiconductor
 
 <h2>Collection of Component Files used:</h2>
 
+   * Component: ::CMSIS:RTOS:1.0 (API)
+
    * Component: ARM::CMSIS:CORE:4.2.0
+
+   * Component: ARM::CMSIS:RTOS:Keil RTX:4.79.0
+      Include file:  CMSIS\RTOS\RTX\INC\cmsis_os.h
+      Source file:   CMSIS\RTOS\RTX\Templates\RTX_Conf_CM.c
+      Include file:  CMSIS\RTOS\RTX\UserCodeTemplates\osObjects.h
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\main.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MailQueue.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MemPool.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MsgQueue.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Mutex.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Semaphore.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Thread.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Timer.c
+      Source file:   CMSIS\RTOS\RTX\SRC\ARM\SVC_Table.s
+      Library file:  CMSIS\RTOS\RTX\LIB\ARM\RTX_CM0.lib
 
    * Component: NordicSemiconductor::Device:Startup:8.0.3
       Source file:   Device\Source\arm\arm_startup_nrf51.s

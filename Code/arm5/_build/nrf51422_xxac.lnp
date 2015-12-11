@@ -1,8 +1,10 @@
 --cpu Cortex-M0
-".\_build\test.o"
+".\_build\main.o"
 ".\_build\segger_rtt.o"
 ".\_build\segger_rtt_printf.o"
 ".\_build\rtt_syscalls_keil.o"
+"C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.4.0\CMSIS\RTOS\RTX\LIB\ARM\RTX_CM0.lib"
+".\_build\rtx_conf_cm.o"
 ".\_build\arm_startup_nrf51.o"
 ".\_build\system_nrf51.o"
 ".\_build\nrf_drv_common.o"

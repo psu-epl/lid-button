@@ -19,9 +19,7 @@ static volatile bool ready_flag;
 int B = 0;
 int R = 0;
 int G = 0;
-//int pos = 1;
-//int clients = 1;
-//int sync = 1;
+int meshy = 0;
 int rssi;
 uint8_t packet_data[PACKET_LENGTH];
 APP_PWM_INSTANCE(PWM_B,0);
@@ -32,20 +30,6 @@ void pwm_ready_callback(uint32_t pwm_id)
 {
   ready_flag = true;
 }
-
-/*void timer_init()
-{
-	NRF_TIMER1->MODE = TIMER_MODE_MODE_Timer;
-	NRF_TIMER1->TASKS_CLEAR = 1;
-	NRF_TIMER1->PRESCALER = 9;
-	NRF_TIMER1->BITMODE = TIMER_BITMODE_BITMODE_16Bit;
-	NRF_TIMER1->CC[1] = 15000; //31000 is ~ 1 sec
-	NRF_TIMER2->INTENSET = (TIMER_INTENSET_COMPARE1_Enabled << TIMER_INTENSET_COMPARE1_Pos);
-	NVIC_EnableIRQ(TIMER1_IRQn);
-	NRF_TIMER1->TASKS_START = 1;
-	//SEGGER_RTT_printf(0, "Syncing to existing network\n");
-}*/
-
 void color(int blu,int red, int grn)
 {
 		app_pwm_channel_duty_set(&PWM_B, 0, blu);
@@ -118,6 +102,7 @@ void blink(int blu,int red, int grn, int cnt, int spd)
 void mesh(int tblu, int tred, int tgrn, int tsig)
 {
 	// Do all math in HSV and convert back to RGB/PWM
+	meshy = 5;
 	int rblu = app_pwm_channel_duty_get(&PWM_B,0);
 	int rred = app_pwm_channel_duty_get(&PWM_B,1);
 	int rgrn = app_pwm_channel_duty_get(&PWM_G,0);	
@@ -275,74 +260,6 @@ bool radio_receive( uint8_t * packet_buffer )
     return false;
   }
 }
-
-
-/*void TIMER1_IRQHandler(int sec)
-{
-	if(sec > 0)
-	{
-		//SEGGER_RTT_printf(0, "%d\n",sec);
-		NRF_TIMER1->TASKS_CLEAR = 1;
-		NRF_TIMER1->TASKS_START = 1;
-	}
-	else
-	{
-		NRF_TIMER1->TASKS_CLEAR = 1;
-		sync = 0;
-	}
-}*/
-
-/*void net_sync (uint8_t * packet_buffer, int sec)
-{
-	// Make sure radio is in disabled state
-  NRF_RADIO->EVENTS_DISABLED = 0;
-  NRF_RADIO->TASKS_DISABLE = 1;
-  while( NRF_RADIO->EVENTS_DISABLED == 0 );
-	
-	// set pointer to packet data written to using radio peripherals DMA
-	NRF_RADIO->PACKETPTR = (uint32_t)packet_buffer;
-	NRF_RADIO->SHORTS |= RADIO_SHORTS_ADDRESS_RSSISTART_Msk;
-	
-	// turn on receiver
-  NRF_RADIO->EVENTS_READY = 0;
-  NRF_RADIO->TASKS_RXEN = 1;
-  while( NRF_RADIO->EVENTS_READY == 0 ); // wait for radio to startup ~132us
-	
-	while (sync == 1)
-	{
-		NRF_TIMER1->TASKS_CAPTURE[0] = 1;
-		//SEGGER_RTT_printf(0, "Timer[0]: %d Timer[1]: %d\n",NRF_TIMER1->CC[0],NRF_TIMER1->CC[1]);
-		// start listening for packet
-		NRF_RADIO->EVENTS_END = 0;
-		NRF_RADIO->EVENTS_RSSIEND = 0;
-		NRF_RADIO->TASKS_RSSISTART = 1;
-		NRF_RADIO->TASKS_START = 1;
-		while( NRF_RADIO->EVENTS_END == 0 );
-		
-		if( NRF_RADIO->CRCSTATUS != 0 )
-		{
-    //SEGGER_RTT_printf(0, "Target Position: %d\n",packet_data[3]);
-		if(packet_data[3]>= pos){
-			pos++;
-			clients = pos;
-		}
-		//SEGGER_RTT_printf(0, "My position is %d\n",pos);
-		SEGGER_RTT_printf(0, "%d clients found on network\n",clients);
-		}
-		if(NRF_TIMER1->CC[0] > NRF_TIMER1->CC[1])
-		{
-			TIMER1_IRQHandler(sec);
-			--sec;
-		}
-
-	}
-	// disable radio
-	NRF_RADIO->EVENTS_RSSIEND = 0;
-  NRF_RADIO->EVENTS_DISABLED = 0;
-  NRF_RADIO->TASKS_DISABLE = 1;
-  while( NRF_RADIO->EVENTS_DISABLED == 0 );
-}*/
-
 int main(void)
 {
 	int self = 0;
@@ -366,7 +283,10 @@ int main(void)
 		if(radio_receive(packet_data)){
 			if(rssi < 65)
 				self = 0;
-			mesh(packet_data[0],packet_data[1],packet_data[2],rssi);
+			if (meshy < 1)
+					mesh(packet_data[0],packet_data[1],packet_data[2],rssi);
+			else
+				meshy--;
 		}
 		SEGGER_RTT_printf(0, "RSSI:%d\n",rssi);
 		if (self > 5){
@@ -374,59 +294,4 @@ int main(void)
 			color(B,R,G);
 		}
 	}
-	
-	
-	/*OLD Code used to sync to network
-	
-	int fail = 0;
-	SEGGER_RTT_printf(0, "Starting Timers\n");
-	timer_init();
-	SEGGER_RTT_printf(0, "Done!\n");
-	SEGGER_RTT_printf(0, "Scanning as position %d\n",pos);
-	color(60,0,0);
-	net_sync(packet_data,3);
-	SEGGER_RTT_printf(0, "%d clients found on network\n",clients);
-	SEGGER_RTT_printf(0, "Broadcasting as position %d\n",pos);
-	int cnt = 1;
-	
-	while(sync == 0)
-	{
-		packet_data[0] = app_pwm_channel_duty_get(&PWM_B,0);
-		packet_data[1] = app_pwm_channel_duty_get(&PWM_B,1);
-		packet_data[2] = app_pwm_channel_duty_get(&PWM_G,0);
-		packet_data[3] = pos;
-		
-		if (clients > 1){
-			while (cnt <= clients){
-				if(pos == cnt){
-					SEGGER_RTT_printf(0, "Transmit as Position %d\n",pos);
-					radio_transmit(packet_data);
-					cnt++;
-				}
-				else{
-					SEGGER_RTT_printf(0, "Expecting packet from client %d\n",cnt);
-					if(radio_receive(packet_data)){
-						SEGGER_RTT_printf(0, "Packet received from client %d\n",packet_data[3]);
-						if (packet_data[3] == cnt){
-							SEGGER_RTT_printf(0, "Packet:%d Cnt:%d\n",packet_data[3],cnt);
-							mesh(packet_data[0],packet_data[1],packet_data[2],rssi); //no rssi readings
-							cnt++;
-						}
-						else{
-							fail++;
-							if(fail == 5)
-								pos = cnt;
-							SEGGER_RTT_printf(0, "My Position is now %d\n",cnt);
-						}
-					}
-				}
-			}
-		}
-		else{
-			SEGGER_RTT_printf(0, "Tx Solo\n");
-			radio_transmit(packet_data);
-			net_sync(packet_data,1); //sync pos 1
-		}
-	}
-	*/
 }

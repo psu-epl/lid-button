@@ -15,9 +15,9 @@
 .\_build\nrf_drv_gpiote.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\_build\nrf_drv_gpiote.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\_build\nrf_drv_gpiote.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\hal\nrf_gpio.h
-.\_build\nrf_drv_gpiote.o: \\psf\Home\Downloads\arm5-2\RTE\nRF_Drivers\nRF51422_xxAC\nrf_drv_config.h
+.\_build\nrf_drv_gpiote.o: \\psf\Home\Documents\lid-button\Code\arm5\RTE\nRF_Drivers\nRF51422_xxAC\nrf_drv_config.h
 .\_build\nrf_drv_gpiote.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\3.0.1\util\sdk_errors.h
 .\_build\nrf_drv_gpiote.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\nrf_soc_nosd\nrf_error.h
 .\_build\nrf_drv_gpiote.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\common\nrf_drv_common.h
 .\_build\nrf_drv_gpiote.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\3.0.1\util\app_util_platform.h
-.\_build\nrf_drv_gpiote.o: \\psf\Home\Downloads\arm5-2\RTE\nRF_Libraries\nRF51422_xxAC\nrf_assert.h
+.\_build\nrf_drv_gpiote.o: \\psf\Home\Documents\lid-button\Code\arm5\RTE\nRF_Libraries\nRF51422_xxAC\nrf_assert.h

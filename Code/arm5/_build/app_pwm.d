@@ -5,7 +5,7 @@
 .\_build\app_pwm.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\nrf_soc_nosd\nrf_error.h
 .\_build\app_pwm.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\timer\nrf_drv_timer.h
 .\_build\app_pwm.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
-.\_build\app_pwm.o: \\psf\Home\Downloads\arm5-2\RTE\nRF_Drivers\nRF51422_xxAC\nrf_drv_config.h
+.\_build\app_pwm.o: \\psf\Home\Documents\lid-button\Code\arm5\RTE\nRF_Drivers\nRF51422_xxAC\nrf_drv_config.h
 .\_build\app_pwm.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\hal\nrf_timer.h
 .\_build\app_pwm.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\_build\app_pwm.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include\nrf.h
@@ -20,7 +20,7 @@
 .\_build\app_pwm.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include\compiler_abstraction.h
 .\_build\app_pwm.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\common\nrf_drv_common.h
 .\_build\app_pwm.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\ppi\nrf_drv_ppi.h
-.\_build\app_pwm.o: \\psf\Home\Downloads\arm5-2\RTE\nRF_Drivers\nRF51422_xxAC\nrf_ppi.h
+.\_build\app_pwm.o: \\psf\Home\Documents\lid-button\Code\arm5\RTE\nRF_Drivers\nRF51422_xxAC\nrf_ppi.h
 .\_build\app_pwm.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\3.0.1\util\sdk_resources.h
 .\_build\app_pwm.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\gpiote\nrf_drv_gpiote.h
 .\_build\app_pwm.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\hal\nrf_gpiote.h

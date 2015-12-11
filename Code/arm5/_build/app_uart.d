@@ -13,12 +13,12 @@
 .\_build\app_uart.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include\nrf.h
 .\_build\app_uart.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include\nrf51_bitfields.h
 .\_build\app_uart.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include\nrf51_deprecated.h
-.\_build\app_uart.o: \\psf\Home\Downloads\arm5-2\RTE\nRF_Libraries\nRF51422_xxAC\app_error.h
+.\_build\app_uart.o: \\psf\Home\Documents\lid-button\Code\arm5\RTE\nRF_Libraries\nRF51422_xxAC\app_error.h
 .\_build\app_uart.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\nrf_soc_nosd\nrf_error.h
 .\_build\app_uart.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\3.0.1\util\app_util.h
 .\_build\app_uart.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\hal\nrf_gpio.h
 .\_build\app_uart.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\gpiote\nrf_drv_gpiote.h
 .\_build\app_uart.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\3.0.1\hal\nrf_gpiote.h
 .\_build\app_uart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-.\_build\app_uart.o: \\psf\Home\Downloads\arm5-2\RTE\nRF_Drivers\nRF51422_xxAC\nrf_drv_config.h
+.\_build\app_uart.o: \\psf\Home\Documents\lid-button\Code\arm5\RTE\nRF_Drivers\nRF51422_xxAC\nrf_drv_config.h
 .\_build\app_uart.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\3.0.1\util\sdk_errors.h
