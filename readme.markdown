@@ -24,7 +24,7 @@ Quick Links:
 
 [Programming the Microcontroller](https://github.com/psu-epl/lid-button/wiki/Coding-the-Board)
 
-[Final Board Test](url)
+[Final Board Test](https://github.com/psu-epl/lid-button/wiki/Final-Board-Test)
 
 [Enclosure](https://github.com/psu-epl/lid-button/wiki/Enclosure)
 
