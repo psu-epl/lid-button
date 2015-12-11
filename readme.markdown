@@ -8,7 +8,7 @@ Quick Links:
 
 [Plating Thru Holes](https://github.com/psu-epl/lid-button/wiki/Plating-Thru-Holes)
 
-[Testing the Board Part One](https://github.com/psu-epl/lid-button/wiki/Testing-the-board)
+[Testing the Board Part One](https://github.com/psu-epl/lid-button/wiki/Testing-the-board-Part-One)
 
 [Solder Mask](https://github.com/psu-epl/lid-button/wiki/Applying-Solder-Mask)
 
