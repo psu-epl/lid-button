@@ -28,6 +28,6 @@ Quick Links:
 
 [Enclosure Bottom](https://github.com/psu-epl/lid-button/wiki/Enclosure-Bottom)
 
-[Enclosure Top](url)
+[Enclosure Top](https://github.com/psu-epl/lid-button/wiki/Enclosure-Top)
 
 [About this Project](Link to about page)
